@@ -9,6 +9,8 @@ public class UserInput : MonoBehaviour
 
     public float MouseInputX;
     public float MouseInputY;
+    [SerializeField]
+    public bool IsLightOn = true;
 
     private void FixedUpdate()
     {
@@ -17,5 +19,14 @@ public class UserInput : MonoBehaviour
 
         MouseInputX = Input.GetAxis("Mouse X");
         MouseInputY = Input.GetAxis("Mouse Y");
+
+        if(Input.GetKeyDown(KeyCode.F) && IsLightOn == true)
+        {
+            IsLightOn = false;
+        }
+        else if(Input.GetKeyDown(KeyCode.F) && IsLightOn == false)
+        {
+            IsLightOn = true;    
+        }
     }
 }
