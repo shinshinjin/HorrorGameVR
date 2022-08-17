@@ -63,7 +63,7 @@ public class DrawerInteraction : MonoBehaviour , IInteraction
                 break;
             }
             Debug.Log("열리는 중");
-            yield return new WaitForSeconds(0.01f);
+            yield return null;
         }
     }
     IEnumerator Close()
@@ -80,7 +80,7 @@ public class DrawerInteraction : MonoBehaviour , IInteraction
                 break;
             }
             Debug.Log("닫히는 중");
-            yield return new WaitForSeconds(0.01f);
+            yield return null;
         }
     }
 
