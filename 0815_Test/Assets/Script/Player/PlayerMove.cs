@@ -26,6 +26,16 @@ public class PlayerMove : MonoBehaviour
         {
             _speed = 4f;
         }
+
+        if(Input.GetKey(KeyCode.LeftControl))
+        {
+            transform.localScale = new Vector3(2, 2, 2);
+            
+        }
+        else
+        {
+            transform.localScale = new Vector3(2, 4, 2);
+        }
         
         
         Move();
