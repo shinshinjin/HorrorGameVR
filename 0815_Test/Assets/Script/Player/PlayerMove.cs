@@ -7,8 +7,6 @@ public class PlayerMove : MonoBehaviour
     private UserInput _input;
     private Rigidbody _rigidbody;
     private CapsuleCollider _capsuleCollider;
-    public GameObject _camera;
-    public GameObject _light;
     private Vector3 _moveVector;
 
     private bool _isJump;
