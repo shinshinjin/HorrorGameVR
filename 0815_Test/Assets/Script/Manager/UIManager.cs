@@ -27,7 +27,6 @@ public class UIManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
-
     public void InteractDrawText(string text)
     {
         Text.text = text;

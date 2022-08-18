@@ -4,24 +4,77 @@ using UnityEngine;
 
 public class DoorInteraction : MonoBehaviour , IInteraction
 {
-    public bool IsOpen = false;
+    public bool _isMoveDoor;
+    public string _activeText;
 
-    private void Interaction()
+    private bool _isOpen;
+    private float _elapsedTime;
+    private float _doorOpenCooltime = 0.7f;
+    private float _initTime = 0f;
+
+    private float _moveSpeed = 2.5f;
+
+    private void Awake()
     {
-        if(IsOpen == false)
-            DoorOpen();
+        _activeText = "문 열기";
+    }
 
+    public void Interaction()
+    {
+        StartCoroutine(Move());
+    }
+
+    IEnumerator Move()
+    {
+        _isMoveDoor = true;
+        if (_isOpen)
+        {
+            _activeText = "문 열기";
+            StartCoroutine(Open());
+            _isOpen = false;
+        }
         else
-            DoorClose();
+        {
+            _activeText = "문 닫기";
+            StartCoroutine(Close());
+            _isOpen = true;
+        }
+        yield return null;
     }
-
-    void DoorOpen()
+    IEnumerator Open()
     {
+        while (true)
+        {
 
+            transform.Rotate(0, -_moveSpeed, 0);
+
+            _elapsedTime += Time.fixedDeltaTime;
+            if (_elapsedTime > _doorOpenCooltime)
+            {
+                _elapsedTime = _initTime;
+                _isMoveDoor = false;
+                break;
+            }
+            Debug.Log("열리는 중");
+            yield return null;
+        }
     }
-
-    void DoorClose()
+    IEnumerator Close()
     {
+        while (true)
+        {
 
+            transform.Rotate(0, _moveSpeed, 0);
+
+            _elapsedTime += Time.fixedDeltaTime;
+            if (_elapsedTime > _doorOpenCooltime)
+            {
+                _elapsedTime = _initTime;
+                _isMoveDoor = false;
+                break;
+            }
+            Debug.Log("닫히는 중");
+            yield return null;
+        }
     }
 }
