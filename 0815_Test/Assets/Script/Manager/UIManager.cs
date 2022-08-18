@@ -28,16 +28,15 @@ public class UIManager : MonoBehaviour
     }
 
 
-    public void InteractDrawText(string text, bool isInteract)
+    public void InteractDrawText(string text)
     {
         Text.text = text;
-        if(isInteract)
-        {
-            _text.SetActive(true);
-        }
-        else
-        {
-            _text.SetActive(false);
-        }
+        
+        _text.SetActive(true);
+    }
+
+    public void InteractEraseText()
+    {
+        _text.SetActive(false);
     }
 }

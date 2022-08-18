@@ -18,6 +18,7 @@ public class ActionController : MonoBehaviour
     [SerializeField]
     private Text actionText; // 필요한 컴포넌트
 
+    
     void Update()
     {
         TryAction();
