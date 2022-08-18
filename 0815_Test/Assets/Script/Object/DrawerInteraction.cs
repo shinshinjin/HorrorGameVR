@@ -5,56 +5,49 @@ using UnityEngine;
 
 public class DrawerInteraction : MonoBehaviour , IInteraction
 {
-    public Transform _player;
+    
+    public bool _isMoveDrawer;
+    public string _activeText;
 
     private bool _isOpen;
-    private bool _isMoveDrawer;
     private float _elapsedTime;
-    private float _canInteractionDistance = 6f;
 
-    private void Interaction()
+    private float _moveSpeed = 0.05f;
+
+    private void Awake()
     {
-        if( _isOpen )
+        _activeText = "서랍 열기";
+    }
+
+    public void Interaction()
+    {
+        StartCoroutine(Move());
+    }
+
+    IEnumerator Move()
+    {
+        _isMoveDrawer = true;
+        if(_isOpen)
         {
-            StartCoroutine(Close());
+            _activeText = "서랍 열기";
+            StartCoroutine(Open());
             _isOpen = false;
         }
         else
         {
-            StartCoroutine(Open());
+            _activeText = "서랍 닫기";
+            StartCoroutine(Close());
             _isOpen = true;
         }
+        yield return null;
     }
-    
-    private void OnMouseOver()
-    {
-        if(Vector3.Distance(transform.position, _player.position) < _canInteractionDistance)
-        {
-            UIManager.Instance.InteractDrawText("상호작용하기", true);
-        }
-        else
-        {
-            UIManager.Instance.InteractDrawText("상호작용하기", false);
-        }
-
-
-        if (Input.GetMouseButtonDown(0) && GetDistanceFromInteractObject() < _canInteractionDistance && _isMoveDrawer == false)
-        {
-            Interaction();
-        }
-    }
-
-    private void OnMouseExit()
-    {
-        UIManager.Instance.InteractDrawText("상호작용하기", false);
-    }
-
     IEnumerator Open()
     {
-        while(true)
+        while (true)
         {
-            _isMoveDrawer = true;
-            transform.Translate(0, 0, -0.05f);
+            
+            transform.Translate(0, 0, _moveSpeed);
+            
             _elapsedTime += Time.fixedDeltaTime;
             if (_elapsedTime > 0.5f)
             {
@@ -70,8 +63,9 @@ public class DrawerInteraction : MonoBehaviour , IInteraction
     {
         while (true)
         {
-            _isMoveDrawer = true;
-            transform.Translate(0, 0, 0.05f);
+            
+            transform.Translate(0, 0, -_moveSpeed);
+            
             _elapsedTime += Time.fixedDeltaTime;
             if (_elapsedTime > 0.5f)
             {
@@ -84,8 +78,4 @@ public class DrawerInteraction : MonoBehaviour , IInteraction
         }
     }
 
-    private float GetDistanceFromInteractObject()
-    {
-        return Vector3.Distance(transform.position, _player.position);
-    }
 }

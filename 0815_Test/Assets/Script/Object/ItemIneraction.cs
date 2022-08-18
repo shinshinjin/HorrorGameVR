@@ -30,11 +30,11 @@ public class ItemIneraction : MonoBehaviour, IInteraction
     {
         if (Vector3.Distance(transform.position, _player.position) < _canInteractionDistance)
         {
-            UIManager.Instance.InteractDrawText("¿­¼è È¹µæ" + "<color=yellow>" + "(E)" + "</color>", true);
+            UIManager.Instance.InteractDrawText("¿­¼è È¹µæ" + "<color=yellow>" + "(E)" + "</color>");
         }
         else
         {
-            UIManager.Instance.InteractDrawText("¿­¼è È¹µæ" + "<color=yellow>" + "(E)" + "</color>", false);
+            UIManager.Instance.InteractDrawText("¿­¼è È¹µæ" + "<color=yellow>" + "(E)" + "</color>");
         }
 
 
@@ -48,14 +48,14 @@ public class ItemIneraction : MonoBehaviour, IInteraction
             //theInventory.AcquireItem();
 
             UIManager.Instance.gameObject.SetActive(false);
-            UIManager.Instance.InteractDrawText("¿­¼è È¹µæ" + "<color=yellow>" + "(E)" + "</color>", false);
+            UIManager.Instance.InteractDrawText("¿­¼è È¹µæ" + "<color=yellow>" + "(E)" + "</color>");
             //Get();
         }
     }
 
     private void OnMouseExit()
     {
-        UIManager.Instance.InteractDrawText("¿­¼è È¹µæ" + "<color=yellow>" + "(E)" + "</color>", false);
+        UIManager.Instance.InteractDrawText("¿­¼è È¹µæ" + "<color=yellow>" + "(E)" + "</color>");
     }
 
     private void Get()
