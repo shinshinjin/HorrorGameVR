@@ -9,7 +9,7 @@ public class PlayerRay : MonoBehaviour
     private RaycastHit _hit;
     private float _distance = 6f;
 
-
+    
     private void Update()
     {
         UIManager.Instance.InteractEraseText();
@@ -24,9 +24,8 @@ public class PlayerRay : MonoBehaviour
             {
                 DoorInteract();
             }
-
         }
-
+        
     }
 
     private void DrawerInteract()
@@ -42,12 +41,10 @@ public class PlayerRay : MonoBehaviour
         {
             _drawer.Interaction();
         }
-        
     }
 
     private void DoorInteract()
     {
-        
         _door = _hit.transform.GetComponent<DoorInteraction>();
         UIManager.Instance.InteractDrawText(_door._activeText);
         Debug.Assert(_door != null);
@@ -56,6 +53,5 @@ public class PlayerRay : MonoBehaviour
         {
             _door.Interaction();
         }
-        
     }
 }

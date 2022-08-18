@@ -24514,8 +24514,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   range: 0
+  pickupActivated: 0
   layerMask:
-    serializedVersion: 2
     m_Bits: 64
   actionText: {fileID: 0}
 --- !u!1 &963663515
