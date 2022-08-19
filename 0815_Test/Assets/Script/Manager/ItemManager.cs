@@ -13,6 +13,8 @@ public class ItemManager : MonoBehaviour
 
     public ItemData[] itemDatas;
 
+    public bool[] isSelected;
+
     public static ItemManager Instance
     {
         get
@@ -28,5 +30,13 @@ public class ItemManager : MonoBehaviour
     private void Awake()
     {
         DontDestroyOnLoad(gameObject);
+    }
+
+    public void ResetSelect()
+    {
+        for(int i = 0; i < isSelected.Length; i++)
+        {
+            isSelected[i] = false;
+        }
     }
 }
