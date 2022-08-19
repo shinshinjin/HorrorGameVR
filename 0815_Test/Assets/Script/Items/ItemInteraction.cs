@@ -15,16 +15,7 @@ public class ItemInteraction : MonoBehaviour , IInteraction
 
     public void Interaction()
     {
-        //for (int i = 0; i < ItemManager.Instance.itemDatas.Length; i++)
-        //{
-        //    if (ItemManager.Instance.itemDatas[i].ItemName == ItemName)
-        //    {
-        //    }
-        //}
-        //Slots[0].ItemData = ItemManager.Instance.itemDatas;
-
         
-
         Debug.Assert(ItemName != null);
         if(ItemName == "Key")
         {
