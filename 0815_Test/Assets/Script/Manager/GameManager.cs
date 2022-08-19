@@ -5,7 +5,10 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     private static GameManager _instance;
-    
+
+    public bool IsMouseLocked = true;
+
+    public bool IsPaused;
     public static GameManager Instance
     {
         get
@@ -23,4 +26,5 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
+    
 }

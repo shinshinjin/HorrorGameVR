@@ -15,11 +15,23 @@ public class Inventory : MonoBehaviour
 
     public void SetInventory()
     {
-        if(ItemManager.Instance.IsHaveKey)
-        {
-            Slots[0].ItemName = ItemManager.Instance.itemDatas[0].ItemName;
-            Slots[0].ItemImage = ItemManager.Instance.itemDatas[0].ItemImage;
-        }
         
+
+        if(ItemManager.Instance.IsHaveKey && ItemManager.Instance.AlreadyHaveKey == false)
+        {
+            Slots[_slotCount].ItemName = ItemManager.Instance.itemDatas[0].ItemName;
+            Slots[_slotCount].ItemImage = ItemManager.Instance.itemDatas[0].ItemImage;
+            ItemManager.Instance.AlreadyHaveKey = true;
+            _slotCount++;
+        }
+
+        if (ItemManager.Instance.IsHavePhone && ItemManager.Instance.AlreadyHavePhone == false)
+        {
+            Slots[_slotCount].ItemName = ItemManager.Instance.itemDatas[1].ItemName;
+            Slots[_slotCount].ItemImage = ItemManager.Instance.itemDatas[1].ItemImage;
+            ItemManager.Instance.AlreadyHavePhone = true;
+            _slotCount++;
+        }
+
     }
 }

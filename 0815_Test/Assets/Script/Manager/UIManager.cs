@@ -7,8 +7,9 @@ public class UIManager : MonoBehaviour
 {
     private static UIManager _instance;
 
-    public GameObject _text;
-    public Text Text;
+    public GameObject _interactText;
+    public Text InteractText;
+    public Text SelectedItemText;
     
     public static UIManager Instance
     {
@@ -29,14 +30,19 @@ public class UIManager : MonoBehaviour
 
     public void InteractDrawText(string text)
     {
-        Text.text = text;
+        InteractText.text = text;
         
-        _text.SetActive(true);
+        _interactText.SetActive(true);
     }
 
     public void InteractEraseText()
     {
-        _text.SetActive(false);
+        _interactText.SetActive(false);
+    }
+
+    public void SetSelectedItemText(string itemName)
+    {
+        SelectedItemText.text = $"선택한 아이템 : {itemName}";
     }
 
 }

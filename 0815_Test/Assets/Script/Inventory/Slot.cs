@@ -10,8 +10,6 @@ public class Slot : MonoBehaviour
 
     public Image _image;
 
-    
-
     private void Update()
     {
         if(ItemImage != null && ItemName != null)

@@ -14,7 +14,10 @@ public class CameraMove : MonoBehaviour
 
     private void Update()
     {
-        Move();
+        if(GameManager.Instance.IsPaused == false)
+        {
+            Move();
+        }
     }
 
     private void Move()
