@@ -6,6 +6,7 @@ public class PlayerRay : MonoBehaviour
 {
     private DrawerInteraction _drawer;
     private DoorInteraction _door;
+    private ItemInteraction _item;
     private RaycastHit _hit;
     private float _distance = 6f;
 
@@ -23,6 +24,11 @@ public class PlayerRay : MonoBehaviour
             if(_hit.transform.CompareTag("Door"))
             {
                 DoorInteract();
+            }
+
+            if(_hit.transform.CompareTag("Item"))
+            {
+                ItemInteract();
             }
         }
         
@@ -52,6 +58,17 @@ public class PlayerRay : MonoBehaviour
         if (Input.GetMouseButtonDown(0) && _door._isMoveDoor == false)
         {
             _door.Interaction();
+        }
+    }
+
+    private void ItemInteract()
+    {
+        _item = _hit.transform.GetComponent<ItemInteraction>();
+        UIManager.Instance.InteractDrawText(_item._activeText);
+        if(Input.GetMouseButtonDown(0))
+        {
+            _item.ItemName = _hit.transform.name;
+            _item.Interaction();
         }
     }
 }

@@ -32,13 +32,13 @@ public class DrawerInteraction : MonoBehaviour , IInteraction
         if(_isOpen)
         {
             _activeText = "서랍 열기";
-            StartCoroutine(Open());
+            StartCoroutine(Close());
             _isOpen = false;
         }
         else
         {
             _activeText = "서랍 닫기";
-            StartCoroutine(Close());
+            StartCoroutine(Open());
             _isOpen = true;
         }
         yield return null;
@@ -48,7 +48,7 @@ public class DrawerInteraction : MonoBehaviour , IInteraction
         while (true)
         {
             
-            transform.Translate(0, 0, _moveSpeed);
+            transform.Translate(0, 0, -_moveSpeed);
             
             _elapsedTime += Time.fixedDeltaTime;
             if (_elapsedTime > _drawerOpenCooltime)
@@ -66,7 +66,7 @@ public class DrawerInteraction : MonoBehaviour , IInteraction
         while (true)
         {
             
-            transform.Translate(0, 0, -_moveSpeed);
+            transform.Translate(0, 0, _moveSpeed);
             
             _elapsedTime += Time.fixedDeltaTime;
             if (_elapsedTime > _drawerOpenCooltime)

@@ -38,4 +38,5 @@ public class UIManager : MonoBehaviour
     {
         _text.SetActive(false);
     }
+
 }

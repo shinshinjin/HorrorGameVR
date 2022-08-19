@@ -45,7 +45,6 @@ public class DoorInteraction : MonoBehaviour , IInteraction
     {
         while (true)
         {
-
             transform.Rotate(0, -_moveSpeed, 0);
 
             _elapsedTime += Time.fixedDeltaTime;
@@ -63,7 +62,6 @@ public class DoorInteraction : MonoBehaviour , IInteraction
     {
         while (true)
         {
-
             transform.Rotate(0, _moveSpeed, 0);
 
             _elapsedTime += Time.fixedDeltaTime;
@@ -77,4 +75,6 @@ public class DoorInteraction : MonoBehaviour , IInteraction
             yield return null;
         }
     }
+
+    // 기존 델타타임 
 }
