@@ -32,6 +32,12 @@ public class ItemInteraction : MonoBehaviour , IInteraction
             gameObject.SetActive(false);
         }
 
-        
+        if (ItemName == "SmartPhone")
+        {
+            ItemManager.Instance.IsHavePhone = true;
+            gameObject.SetActive(false);
+        }
+
+
     }
 }

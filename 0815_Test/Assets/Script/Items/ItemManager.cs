@@ -7,6 +7,9 @@ public class ItemManager : MonoBehaviour
     private static ItemManager _instance;
 
     public bool IsHaveKey { get; set; }
+    public bool AlreadyHaveKey { get; set; }
+    public bool IsHavePhone { get; set; }
+    public bool AlreadyHavePhone { get; set; }
 
     public ItemData[] itemDatas;
 

@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ab9b97d162e80c24a9f3aceea9bbcd53, type: 3}
-  m_Name: Key 1
+  m_Name: SmartPhone
   m_EditorClassIdentifier: 
-  _itemName: Key
-  _itemImage: {fileID: 21300000, guid: be77cee3774e1a145b93c6d562bfb131, type: 3}
+  ItemName: SmartPhone
+  ItemImage: {fileID: 21300000, guid: 86a0aad5cfac704418286840bb39b750, type: 3}

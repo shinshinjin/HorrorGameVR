@@ -42,9 +42,11 @@ public class PlayerMove : MonoBehaviour
             _isSitDown = false;
         }
 
-
-        Sit();
-        Move();
+        if(GameManager.Instance.IsPaused == false)
+        {
+            Sit();
+            Move();
+        }
     }
 
     private void Move()

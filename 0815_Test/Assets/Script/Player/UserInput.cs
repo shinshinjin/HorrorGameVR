@@ -29,7 +29,7 @@ public class UserInput : MonoBehaviour
             IsLightOn = !IsLightOn;
         }
 
-        if (Input.GetKeyDown(KeyCode.I))
+        if (Input.GetKeyDown(KeyCode.Tab))
         {
             IsInventoryOn = !IsInventoryOn;
         }
