@@ -5,10 +5,17 @@ using UnityEngine;
 public class CameraMove : MonoBehaviour
 {
     private UserInput _input;
+    private CapsuleCollider _cameraPosition;
+    private PlayerMove _move;
+    public Transform _player;
+
     private float _speed = 4f;
     private float xRotate = 0.0f;
+    
     private void Awake()
     {
+        _cameraPosition = GetComponentInParent<CapsuleCollider>();
+        _move = GetComponentInParent<PlayerMove>();
         _input = GetComponent<UserInput>();
     }
 
@@ -22,17 +29,23 @@ public class CameraMove : MonoBehaviour
 
     private void Move()
     {
-        // 좌우로 움직인 마우스의 이동량 * 속도에 따라 카메라가 좌우로 회전할 양 계산
+        if(_move._isSitDown)
+        {
+            transform.position = _player.transform.position;
+        }
+        else
+        {
+            transform.position = _player.transform.position + new Vector3(0, 3.5f, 0);
+        }
+
         float yRotateSize = Input.GetAxis("Mouse X") * _speed;
-        // 현재 y축 회전값에 더한 새로운 회전각도 계산
+
         float yRotate = transform.eulerAngles.y + yRotateSize;
 
-        // 위아래로 움직인 마우스의 이동량 * 속도에 따라 카메라가 회전할 양 계산(하늘, 바닥을 바라보는 동작)
         float xRotateSize = -Input.GetAxis("Mouse Y") * _speed;
 
         xRotate = Mathf.Clamp(xRotate + xRotateSize, -90, 90);
 
-        // 카메라 회전량을 카메라에 반영(X, Y축만 회전)
         transform.eulerAngles = new Vector3(xRotate, yRotate, 0);   
     }
 }
