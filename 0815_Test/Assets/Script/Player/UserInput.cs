@@ -10,9 +10,10 @@ public class UserInput : MonoBehaviour
     public float MouseInputX;
     public float MouseInputY;
     [SerializeField]
-    public bool IsLightOn = true;
+    public bool IsLightOn;
     public bool IsInventoryOn;
 
+    
     private void FixedUpdate()
     {
         InputX = Input.GetAxisRaw("Horizontal");
@@ -24,7 +25,7 @@ public class UserInput : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.F))
+        if (Input.GetKeyDown(KeyCode.F) && ItemManager.Instance.IsHavePhone)
         {
             IsLightOn = !IsLightOn;
         }

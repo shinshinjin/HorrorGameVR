@@ -6,6 +6,8 @@ public class ItemManager : MonoBehaviour
 {
     private static ItemManager _instance;
 
+    public bool IsHaveTutorialKey { get; set; }
+    public bool AlreadyHaveTutorialKey { get; set; }
     public bool IsHaveKey { get; set; }
     public bool AlreadyHaveKey { get; set; }
     public bool IsHavePhone { get; set; }
@@ -14,6 +16,8 @@ public class ItemManager : MonoBehaviour
     public ItemData[] itemDatas;
 
     public bool[] isSelected;
+
+    public string CurrentItemName;
 
     public static ItemManager Instance
     {

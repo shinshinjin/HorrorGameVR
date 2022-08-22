@@ -2,10 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DoorInteraction : MonoBehaviour , IInteraction
+public class LockDoorInteraction : MonoBehaviour, IInteraction
 {
     public bool _isMoveDoor;
     public string _activeText;
+
+    public string UnlockItemName;
 
     private bool _isOpen;
     private float _elapsedTime;
@@ -26,18 +28,26 @@ public class DoorInteraction : MonoBehaviour , IInteraction
 
     IEnumerator Move()
     {
-        _isMoveDoor = true;
-        if (_isOpen)
+        if(ItemManager.Instance.CurrentItemName == UnlockItemName)
         {
-            _activeText = "문 열기 (E)";
-            StartCoroutine(Open());
-            _isOpen = false;
+
+            _isMoveDoor = true;
+            if (_isOpen)
+            {
+                _activeText = "문 열기 (E)";
+                StartCoroutine(Open());
+                _isOpen = false;
+            }
+            else
+            {
+                _activeText = "문 닫기 (E)";
+                StartCoroutine(Close());
+                _isOpen = true;
+            }
         }
         else
         {
-            _activeText = "문 닫기 (E)";
-            StartCoroutine(Close());
-            _isOpen = true;
+            _activeText = "문이 잠겨있다.";
         }
         yield return null;
     }
@@ -75,6 +85,4 @@ public class DoorInteraction : MonoBehaviour , IInteraction
             yield return null;
         }
     }
-
-    // 기존 델타타임 
 }

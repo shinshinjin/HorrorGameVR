@@ -8,7 +8,17 @@ public class GameManager : MonoBehaviour
 
     public bool IsMouseLocked = true;
 
+    public bool IsTutorialOver;
+
     public bool IsPaused;
+
+    public bool IsMoveTutorialOver;
+
+    public bool IsStartInteractTutorial;
+    public bool IsInteractTutorialOver;
+
+    public bool IsStartUseItemTutorial;
+    public bool IsUseItemTutorialOver;
     public static GameManager Instance
     {
         get

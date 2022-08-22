@@ -9,6 +9,8 @@ TagManager:
   - Interactable
   - Drawer
   - Door
+  - LockDoor
+  - TutorialDrawer
   layers:
   - Default
   - TransparentFX
