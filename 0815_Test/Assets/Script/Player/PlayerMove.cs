@@ -61,7 +61,8 @@ public class PlayerMove : MonoBehaviour
         _moveVector.y = 0f;
         _moveVector.Normalize();
 
-        transform.position += _moveVector * _speed * Time.fixedDeltaTime;
+        _rigidbody.MovePosition(transform.position + _moveVector * _speed * Time.fixedDeltaTime);
+        //transform.position += _moveVector * _speed * Time.fixedDeltaTime;
     }
 
     private void Sit()
