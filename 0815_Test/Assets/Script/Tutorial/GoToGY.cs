@@ -13,7 +13,6 @@ public class GoToGY : MonoBehaviour
             Debug.Log("학원 출발");
             Player.position = Target.position;
             UIManager.Instance.EraseInfoText();
-            
         }
     }
 }

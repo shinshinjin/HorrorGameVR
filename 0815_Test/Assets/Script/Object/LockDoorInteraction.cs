@@ -20,7 +20,7 @@ public class LockDoorInteraction : MonoBehaviour, IInteraction
     {
         _activeText = "¹® ¿­±â (E)";
     }
-
+    
     public void Interaction()
     {
         StartCoroutine(Move());

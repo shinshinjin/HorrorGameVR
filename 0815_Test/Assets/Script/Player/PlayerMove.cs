@@ -6,17 +6,16 @@ public class PlayerMove : MonoBehaviour
 {
     private UserInput _input;
     private Rigidbody _rigidbody;
-    private CapsuleCollider _capsuleCollider;
     private Camera _camera;
     private Vector3 _moveVector;
+    private CapsuleCollider _capsuleCollider;
 
 
     private bool _isJump;
 
     public bool _isSitDown;
 
-    [SerializeField]
-    private float _speed;
+    public float _speed;
 
     private void Awake()
     {
@@ -27,7 +26,7 @@ public class PlayerMove : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        if(Input.GetKey(KeyCode.LeftShift))
+        if(Input.GetKey(KeyCode.LeftShift) && !_isSitDown)
         {
             _speed = 8f;
         }
@@ -40,7 +39,7 @@ public class PlayerMove : MonoBehaviour
         {
             _isSitDown = true;
         }
-        if(!Input.GetKey(KeyCode.LeftControl))
+        if(!Input.GetKey(KeyCode.LeftControl) && GameManager.Instance.IsInFan == false)
         {
             _isSitDown = false;
         }
