@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ab9b97d162e80c24a9f3aceea9bbcd53, type: 3}
-  m_Name: Tutorial_Key
+  m_Name: "\uD574\uBA38"
   m_EditorClassIdentifier: 
-  ItemName: Tutorial_Key
-  ItemImage: {fileID: 21300000, guid: be77cee3774e1a145b93c6d562bfb131, type: 3}
+  ItemName: "\uD574\uBA38"
+  ItemImage: {fileID: 21300000, guid: 8906b8f7a5b03e74c869ca8f305445ea, type: 3}

@@ -6,12 +6,22 @@ public class ItemManager : MonoBehaviour
 {
     private static ItemManager _instance;
 
-    public bool IsHaveTutorialKey { get; set; }
-    public bool AlreadyHaveTutorialKey { get; set; }
-    public bool IsHaveKey { get; set; }
-    public bool AlreadyHaveKey { get; set; }
+    public bool IsHave11ClassKey { get; set; }
+    public bool Already11ClassHaveKey { get; set; }
     public bool IsHavePhone { get; set; }
     public bool AlreadyHavePhone { get; set; }
+    public bool IsHaveTutorialKey { get; set; }
+    public bool AlreadyHaveTutorialKey { get; set; }
+    public bool IsHaveDriver { get; set; }
+    public bool AlreadyHaveDriver { get; set; }
+    public bool IsHaveHammer { get; set; }
+    public bool AlreadyHaveHammer { get; set; }
+    public bool IsHaveNoteBook { get; set; }
+    public bool AlreadyHaveNoteBook { get; set; }
+    public bool IsHaveRingKey { get; set; }
+    public bool AlreadyHaveRingKey { get; set; }
+    public bool IsHave101Key { get; set; }
+    public bool AlreadyHave101Key { get; set; }
 
     public ItemData[] itemDatas;
 
