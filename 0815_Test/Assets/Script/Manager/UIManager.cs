@@ -12,6 +12,7 @@ public class UIManager : MonoBehaviour
     public Text SelectedItemText;
     public GameObject ViewInfoText;
     public Text InfoText;
+    public Text GuideText;
     
     public static UIManager Instance
     {
@@ -60,6 +61,15 @@ public class UIManager : MonoBehaviour
     public void SetInfoText(string infoText)
     {
         InfoText.text = infoText;
+    }
+
+    public void SetAndDrawGuideText(string guideText)
+    {
+        GuideText.text = guideText;
+    }
+    public void EraseGuideText()
+    {
+        GuideText.text = "";
     }
 
 }

@@ -10,8 +10,16 @@ public class PlayerMove : MonoBehaviour
     private Vector3 _moveVector;
     private CapsuleCollider _capsuleCollider;
 
+    private AudioSource _audioSource;
 
-    private bool _isJump;
+    private bool _isChangeAudioClip;
+
+    private bool _isRunning;
+    private bool _isMoving; 
+
+    public AudioClip Walking;
+    public AudioClip Running;
+    public AudioClip Sitting;
 
     public bool _isSitDown;
 
@@ -19,6 +27,7 @@ public class PlayerMove : MonoBehaviour
 
     private void Awake()
     {
+        _audioSource = GetComponent<AudioSource>();
         _camera = GetComponentInChildren<Camera>();
         _input = GetComponent<UserInput>();
         _rigidbody = GetComponent<Rigidbody>();
@@ -28,11 +37,11 @@ public class PlayerMove : MonoBehaviour
     {
         if(Input.GetKey(KeyCode.LeftShift) && !_isSitDown)
         {
-            _speed = 8f;
+            _isRunning = true;
         }
         else
         {
-            _speed = 4f;
+            _isRunning = false;
         }
 
         if(Input.GetKey(KeyCode.LeftControl) && _isSitDown == false)
@@ -44,18 +53,31 @@ public class PlayerMove : MonoBehaviour
             _isSitDown = false;
         }
 
-        if(GameManager.Instance.IsPaused == false)
+        if (GameManager.Instance.IsPaused == false)
         {
             Sit();
+            Run();
             Move();
+            PlayMoveSound();
         }
+
+    }
+
+    private void Update()
+    {
+        
+
     }
 
     private void Move()
     {
+        if (!_isRunning && !_isSitDown && _audioSource.clip != Walking)
+        {
+            _audioSource.clip = Walking;
+            _isChangeAudioClip = true;
+        }
+
         _moveVector = Vector3.right * _input.InputX + Vector3.forward * _input.InputY;
-
-
         _moveVector = Camera.main.transform.TransformDirection(_moveVector);
         _moveVector.y = 0f;
         _moveVector.Normalize();
@@ -63,26 +85,56 @@ public class PlayerMove : MonoBehaviour
         _rigidbody.MovePosition(transform.position + _moveVector * _speed * Time.fixedDeltaTime);
         //transform.position += _moveVector * _speed * Time.fixedDeltaTime;
     }
+    private void Run()
+    {
+        if(_isRunning && _audioSource.clip != Running)
+        {
+            _audioSource.clip = Running;
+            _isChangeAudioClip = true;
+        }
+
+        if(_isRunning)
+        {
+            _speed = 8f;
+        }
+        else
+        {
+            _speed = 4f;
+        }
+    }
 
     private void Sit()
     {
-        if(_isSitDown)
+        if (_isSitDown && _audioSource.clip != Sitting)
         {
-            //_camera.transform.position = transform.position;
-            //transform.localPosition = new Vector3(transform.position.x, 2, transform.position.z);
-            //if(transform.localPosition.y <= 2f)
-            //    _rigidbody.velocity = Vector3.zero;
-            //transform.localScale = new Vector3(transform.localScale.x, 2, transform.localScale.z);
-            
+            _audioSource.clip = Sitting;
+            _isChangeAudioClip = true;
+        }
 
-            
+        if (_isSitDown)
+        {
             _speed = 2.5f;
             _capsuleCollider.height = 0.1f;
         }
         else
         {
-            //transform.localScale = new Vector3(transform.localScale.x, 4, transform.localScale.z);
             _capsuleCollider.height = 2;
+        }
+    }
+
+    private void PlayMoveSound()
+    {
+        if ((_input.InputX != 0f || _input.InputY != 0f) && _isMoving == false)
+        {
+            _audioSource.Play();
+            _isMoving = true;
+        }
+
+        if ((_input.InputX == 0f && _input.InputY == 0f && _isMoving == true) || _isChangeAudioClip)
+        {
+            _audioSource.Stop();
+            _isMoving = false;
+            _isChangeAudioClip = false;
         }
     }
 }
