@@ -5,7 +5,6 @@ using UnityEngine;
 public class PlayerRay : MonoBehaviour
 {
     private DrawerInteraction _drawer;
-    private TutorialDrawerInteraction _drawerInteraction;
     private DoorInteraction _door;
     private LockDoorInteraction _lockDoor;
     private ItemInteraction _item;
@@ -21,11 +20,6 @@ public class PlayerRay : MonoBehaviour
             if(_hit.transform.CompareTag("Drawer"))
             {
                 DrawerInteract();
-            }
-
-            if (_hit.transform.CompareTag("TutorialDrawer"))
-            {
-                TutorialDrawerInteract();
             }
 
             if (_hit.transform.CompareTag("Door"))
@@ -46,17 +40,6 @@ public class PlayerRay : MonoBehaviour
 
         }
         
-    }
-    private void TutorialDrawerInteract()
-    {
-        _drawerInteraction = _hit.transform.GetComponent<TutorialDrawerInteraction>();
-        UIManager.Instance.DrawInteractText(_drawerInteraction._activeText);
-        Debug.Assert(_drawerInteraction != null);
-
-        if (Input.GetKeyDown(KeyCode.E) && _drawerInteraction._isMoveDrawer == false)
-        {
-            _drawerInteraction.Interaction();
-        }
     }
     private void DrawerInteract()
     {

@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: d936ed2941ef4f241805fc63421fc7ba
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - OpenDrawer: {fileID: 8300000, guid: c6659e32b3cd2634abe96e764bb82360, type: 3}
+  - CloseDrawer: {fileID: 8300000, guid: 0e42a81e9c2e5384bbf34e96c4416ca1, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
