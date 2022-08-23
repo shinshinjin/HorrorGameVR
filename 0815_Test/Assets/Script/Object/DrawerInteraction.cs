@@ -18,7 +18,7 @@ public class DrawerInteraction : MonoBehaviour , IInteraction
 
     private void Awake()
     {
-        _activeText = "서랍 열기";
+        _activeText = "서랍 열기 (E)";
     }
 
     public void Interaction()
@@ -31,13 +31,13 @@ public class DrawerInteraction : MonoBehaviour , IInteraction
         _isMoveDrawer = true;
         if(_isOpen)
         {
-            _activeText = "서랍 열기";
+            _activeText = "서랍 열기 (E)";
             StartCoroutine(Close());
             _isOpen = false;
         }
         else
         {
-            _activeText = "서랍 닫기";
+            _activeText = "서랍 닫기 (E)";
             StartCoroutine(Open());
             _isOpen = true;
         }

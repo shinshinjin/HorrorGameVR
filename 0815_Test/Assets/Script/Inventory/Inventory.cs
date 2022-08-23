@@ -33,5 +33,13 @@ public class Inventory : MonoBehaviour
             _slotCount++;
         }
 
+        if (ItemManager.Instance.IsHaveTutorialKey && ItemManager.Instance.AlreadyHaveTutorialKey == false)
+        {
+            Slots[_slotCount].ItemName = ItemManager.Instance.itemDatas[2].ItemName;
+            Slots[_slotCount].ItemImage = ItemManager.Instance.itemDatas[2].ItemImage;
+            ItemManager.Instance.AlreadyHaveTutorialKey = true;
+            _slotCount++;
+        }
+
     }
 }

@@ -35,7 +35,7 @@ public class CameraMove : MonoBehaviour
         }
         else
         {
-            transform.position = _player.transform.position + new Vector3(0, 3.5f, 0);
+            transform.position = _player.transform.position + new Vector3(0, 3f, 0);
         }
 
         float yRotateSize = Input.GetAxis("Mouse X") * _speed;

@@ -7,9 +7,11 @@ public class UIManager : MonoBehaviour
 {
     private static UIManager _instance;
 
-    public GameObject _interactText;
+    public GameObject ViewInteractText;
     public Text InteractText;
     public Text SelectedItemText;
+    public GameObject ViewInfoText;
+    public Text InfoText;
     
     public static UIManager Instance
     {
@@ -28,21 +30,36 @@ public class UIManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
-    public void InteractDrawText(string text)
+    public void DrawInteractText(string text)
     {
         InteractText.text = text;
-        
-        _interactText.SetActive(true);
+
+        ViewInteractText.SetActive(true);
     }
 
-    public void InteractEraseText()
+    public void EraseInteractText()
     {
-        _interactText.SetActive(false);
+        ViewInteractText.SetActive(false);
     }
 
     public void SetSelectedItemText(string itemName)
     {
         SelectedItemText.text = $"선택한 아이템 : {itemName}";
+    }
+
+    public void DrawInfoText()
+    {
+        ViewInfoText.SetActive(true);
+    }
+
+    public void EraseInfoText()
+    {
+        ViewInfoText.SetActive(false);
+    }
+
+    public void SetInfoText(string infoText)
+    {
+        InfoText.text = infoText;
     }
 
 }

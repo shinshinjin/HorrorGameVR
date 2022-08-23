@@ -10,7 +10,7 @@ public class ItemInteraction : MonoBehaviour , IInteraction
     
     private void Awake()
     {
-        _activeText = "æ∆¿Ã≈€ »πµÊ«œ±‚";
+        _activeText = "æ∆¿Ã≈€ »πµÊ«œ±‚ (E)";
     }
 
     public void Interaction()
@@ -29,6 +29,11 @@ public class ItemInteraction : MonoBehaviour , IInteraction
             gameObject.SetActive(false);
         }
 
+        if(ItemName == "Tutorial_Key")
+        {
+            ItemManager.Instance.IsHaveTutorialKey = true;
+            gameObject.SetActive(false);
+        }
 
     }
 }

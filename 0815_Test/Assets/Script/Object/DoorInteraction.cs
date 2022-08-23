@@ -9,14 +9,14 @@ public class DoorInteraction : MonoBehaviour , IInteraction
 
     private bool _isOpen;
     private float _elapsedTime;
-    private float _doorOpenCooltime = 0.7f;
+    private float _doorOpenCooltime = 1.4f;
     private float _initTime = 0f;
 
-    private float _moveSpeed = 2.5f;
+    private float _moveSpeed = 1.25f;
 
     private void Awake()
     {
-        _activeText = "문 열기";
+        _activeText = "문 열기 (E)";
     }
 
     public void Interaction()
@@ -29,13 +29,13 @@ public class DoorInteraction : MonoBehaviour , IInteraction
         _isMoveDoor = true;
         if (_isOpen)
         {
-            _activeText = "문 열기";
+            _activeText = "문 열기 (E)";
             StartCoroutine(Open());
             _isOpen = false;
         }
         else
         {
-            _activeText = "문 닫기";
+            _activeText = "문 닫기 (E)";
             StartCoroutine(Close());
             _isOpen = true;
         }
