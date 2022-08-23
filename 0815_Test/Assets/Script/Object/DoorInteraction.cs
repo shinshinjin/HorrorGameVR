@@ -4,8 +4,13 @@ using UnityEngine;
 
 public class DoorInteraction : MonoBehaviour , IInteraction
 {
-    public bool _isMoveDoor;
-    public string _activeText;
+    public bool IsMoveDoor;
+    public string ActiveText;
+
+    public AudioClip DoorOpen;
+    public AudioClip DoorClose;
+
+    private AudioSource _doorAudio;
 
     private bool _isOpen;
     private float _elapsedTime;
@@ -14,9 +19,12 @@ public class DoorInteraction : MonoBehaviour , IInteraction
 
     private float _moveSpeed = 1.25f;
 
+
+
     private void Awake()
     {
-        _activeText = "문 열기 (E)";
+        _doorAudio = GetComponent<AudioSource>();
+        ActiveText = "문 열기 (E)";
     }
 
     public void Interaction()
@@ -26,17 +34,20 @@ public class DoorInteraction : MonoBehaviour , IInteraction
 
     IEnumerator Move()
     {
-        _isMoveDoor = true;
+        IsMoveDoor = true;
         if (_isOpen)
         {
-            _activeText = "문 열기 (E)";
-            StartCoroutine(Open());
+            _doorAudio.clip = DoorClose;
+            ActiveText = "문 열기 (E)";
+            StartCoroutine(Close());
             _isOpen = false;
         }
         else
         {
-            _activeText = "문 닫기 (E)";
-            StartCoroutine(Close());
+            _doorAudio.clip = DoorOpen;
+            ActiveText = "문 닫기 (E)";
+            _doorAudio.Play();
+            StartCoroutine(Open());
             _isOpen = true;
         }
         yield return null;
@@ -45,13 +56,13 @@ public class DoorInteraction : MonoBehaviour , IInteraction
     {
         while (true)
         {
-            transform.Rotate(0, -_moveSpeed, 0);
+            transform.Rotate(0, _moveSpeed, 0);
 
             _elapsedTime += Time.fixedDeltaTime;
             if (_elapsedTime > _doorOpenCooltime)
             {
                 _elapsedTime = _initTime;
-                _isMoveDoor = false;
+                IsMoveDoor = false;
                 break;
             }
             Debug.Log("열리는 중");
@@ -62,13 +73,14 @@ public class DoorInteraction : MonoBehaviour , IInteraction
     {
         while (true)
         {
-            transform.Rotate(0, _moveSpeed, 0);
+            transform.Rotate(0, -_moveSpeed, 0);
 
             _elapsedTime += Time.fixedDeltaTime;
             if (_elapsedTime > _doorOpenCooltime)
             {
                 _elapsedTime = _initTime;
-                _isMoveDoor = false;
+                IsMoveDoor = false;
+                _doorAudio.Play();
                 break;
             }
             Debug.Log("닫히는 중");

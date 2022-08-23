@@ -83,10 +83,10 @@ public class PlayerRay : MonoBehaviour
     private void DoorInteract()
     {
         _door = _hit.transform.GetComponent<DoorInteraction>();
-        UIManager.Instance.DrawInteractText(_door._activeText);
+        UIManager.Instance.DrawInteractText(_door.ActiveText);
         Debug.Assert(_door != null);
 
-        if (Input.GetKeyDown(KeyCode.E) && _door._isMoveDoor == false)
+        if (Input.GetKeyDown(KeyCode.E) && _door.IsMoveDoor == false)
         {
             _door.Interaction();
         }

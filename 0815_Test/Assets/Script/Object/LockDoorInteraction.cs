@@ -9,6 +9,11 @@ public class LockDoorInteraction : MonoBehaviour, IInteraction
 
     public string UnlockItemName;
 
+    public AudioClip DoorOpen;
+    public AudioClip DoorClose;
+
+    private AudioSource _doorAudio;
+
     private bool _isOpen;
     private float _elapsedTime;
     private float _doorOpenCooltime = 1.4f;
@@ -18,6 +23,7 @@ public class LockDoorInteraction : MonoBehaviour, IInteraction
 
     private void Awake()
     {
+        _doorAudio = GetComponent<AudioSource>();
         _activeText = "문 열기 (E)";
     }
     
@@ -34,14 +40,17 @@ public class LockDoorInteraction : MonoBehaviour, IInteraction
             _isMoveDoor = true;
             if (_isOpen)
             {
+                _doorAudio.clip = DoorClose;
                 _activeText = "문 열기 (E)";
-                StartCoroutine(Open());
+                StartCoroutine(Close());
                 _isOpen = false;
             }
             else
             {
+                _doorAudio.clip = DoorOpen;
                 _activeText = "문 닫기 (E)";
-                StartCoroutine(Close());
+                _doorAudio.Play();
+                StartCoroutine(Open());
                 _isOpen = true;
             }
         }
@@ -55,7 +64,7 @@ public class LockDoorInteraction : MonoBehaviour, IInteraction
     {
         while (true)
         {
-            transform.Rotate(0, -_moveSpeed, 0);
+            transform.Rotate(0, _moveSpeed, 0);
 
             _elapsedTime += Time.fixedDeltaTime;
             if (_elapsedTime > _doorOpenCooltime)
@@ -72,13 +81,14 @@ public class LockDoorInteraction : MonoBehaviour, IInteraction
     {
         while (true)
         {
-            transform.Rotate(0, _moveSpeed, 0);
+            transform.Rotate(0, -_moveSpeed, 0);
 
             _elapsedTime += Time.fixedDeltaTime;
             if (_elapsedTime > _doorOpenCooltime)
             {
                 _elapsedTime = _initTime;
                 _isMoveDoor = false;
+                _doorAudio.Play();
                 break;
             }
             Debug.Log("닫히는 중");
