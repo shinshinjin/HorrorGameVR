@@ -95,11 +95,11 @@ public class PlayerMove : MonoBehaviour
 
         if(_isRunning)
         {
-            _speed = 16f;
+            _speed = 10f;
         }
         else
         {
-            _speed = 8f;
+            _speed = 5f;
         }
     }
 

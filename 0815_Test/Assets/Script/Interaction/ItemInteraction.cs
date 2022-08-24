@@ -6,64 +6,70 @@ public class ItemInteraction : MonoBehaviour , IInteraction
 {
     public string ItemName { get; set; }
 
+    private AudioSource _getItemSound;
+
     public string _activeText;
     
     private void Awake()
     {
+        _getItemSound = GetComponent<AudioSource>();
         _activeText = "æ∆¿Ã≈€ »πµÊ«œ±‚ (E)";
     }
 
     public void Interaction()
     {
-        
+        _getItemSound.Play();
+
+        CheckItem();
+
+        Invoke("BreakItem", 0.2f);
+    }
+
+    private void CheckItem()
+    {
         Debug.Assert(ItemName != null);
-        if(ItemName == "11∞≠¿«Ω« ø≠ºË")
+        if (ItemName == "11∞≠¿«Ω« ø≠ºË")
         {
             ItemManager.Instance.IsHave11ClassKey = true;
-            gameObject.SetActive(false);
         }
 
         if (ItemName == "Ω∫∏∂∆Æ∆˘")
         {
             ItemManager.Instance.IsHavePhone = true;
-            gameObject.SetActive(false);
         }
 
-        if(ItemName == "∆©≈‰∏ÆæÛ πÊπÆ ø≠ºË")
+        if (ItemName == "∆©≈‰∏ÆæÛ πÊπÆ ø≠ºË")
         {
             ItemManager.Instance.IsHaveTutorialKey = true;
-            gameObject.SetActive(false);
         }
 
         if (ItemName == "µÂ∂Û¿Ãπˆ")
         {
             ItemManager.Instance.IsHaveDriver = true;
-            gameObject.SetActive(false);
         }
 
         if (ItemName == "«ÿ∏”")
         {
             ItemManager.Instance.IsHaveHammer = true;
-            gameObject.SetActive(false);
         }
 
         if (ItemName == "≥Î∆Æ∫œ")
         {
             ItemManager.Instance.IsHaveNoteBook = true;
-            gameObject.SetActive(false);
         }
 
         if (ItemName == "√¢∞Ì ø≠ºË")
         {
             ItemManager.Instance.IsHaveRingKey = true;
-            gameObject.SetActive(false);
         }
 
         if (ItemName == "101»£ ø≠ºË")
         {
             ItemManager.Instance.IsHave101Key = true;
-            gameObject.SetActive(false);
         }
-
+    }
+    private void BreakItem()
+    {
+        gameObject.SetActive(false);
     }
 }

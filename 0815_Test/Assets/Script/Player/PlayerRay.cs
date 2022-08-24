@@ -47,7 +47,7 @@ public class PlayerRay : MonoBehaviour
         UIManager.Instance.DrawInteractText(_drawer._activeText);
         Debug.Assert(_drawer != null);
 
-        if (Input.GetKeyDown(KeyCode.E) && _drawer._isMoveDrawer == false)
+        if (Input.GetKeyDown(KeyCode.E) && _drawer._isMoveDrawer == false && GameManager.Instance.IsPaused == false)
         {
             _drawer.Interaction();
         }
@@ -58,7 +58,7 @@ public class PlayerRay : MonoBehaviour
         UIManager.Instance.DrawInteractText(_lockDoor._activeText);
         Debug.Assert(_lockDoor != null);
 
-        if (Input.GetKeyDown(KeyCode.E) && _lockDoor._isMoveDoor == false)
+        if (Input.GetKeyDown(KeyCode.E) && _lockDoor._isMoveDoor == false && GameManager.Instance.IsPaused == false)
         {
             _lockDoor.Interaction();
         }
@@ -69,7 +69,7 @@ public class PlayerRay : MonoBehaviour
         UIManager.Instance.DrawInteractText(_door.ActiveText);
         Debug.Assert(_door != null);
 
-        if (Input.GetKeyDown(KeyCode.E) && _door.IsMoveDoor == false)
+        if (Input.GetKeyDown(KeyCode.E) && _door.IsMoveDoor == false && GameManager.Instance.IsPaused == false)
         {
             _door.Interaction();
         }
@@ -79,7 +79,7 @@ public class PlayerRay : MonoBehaviour
     {
         _item = _hit.transform.GetComponent<ItemInteraction>();
         UIManager.Instance.DrawInteractText(_item._activeText);
-        if(Input.GetKeyDown(KeyCode.E))
+        if(Input.GetKeyDown(KeyCode.E) && GameManager.Instance.IsPaused == false)
         {
             _item.ItemName = _hit.transform.name;
             _item.Interaction();
