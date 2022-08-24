@@ -44,6 +44,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Event_RED_Light
       objectReference: {fileID: 0}
+    - target: {fileID: 6162113504180665559, guid: 6af2f067ff5560d4f998f6c8488f9ba5, type: 3}
+      propertyPath: m_Range
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 6162113504180665559, guid: 6af2f067ff5560d4f998f6c8488f9ba5, type: 3}
+      propertyPath: m_DrawHalo
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6162113504180665559, guid: 6af2f067ff5560d4f998f6c8488f9ba5, type: 3}
+      propertyPath: m_RenderMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6162113504180665559, guid: 6af2f067ff5560d4f998f6c8488f9ba5, type: 3}
+      propertyPath: m_Lightmapping
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6162113504180665559, guid: 6af2f067ff5560d4f998f6c8488f9ba5, type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8838572336082465691, guid: 6af2f067ff5560d4f998f6c8488f9ba5, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -54,7 +74,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8838572336082465691, guid: 6af2f067ff5560d4f998f6c8488f9ba5, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.6899967
+      value: -2.55
       objectReference: {fileID: 0}
     - target: {fileID: 8838572336082465691, guid: 6af2f067ff5560d4f998f6c8488f9ba5, type: 3}
       propertyPath: m_LocalPosition.z
