@@ -8,6 +8,8 @@ public class LockDoorInteraction : MonoBehaviour, IInteraction
     public string _activeText;
 
     public string UnlockItemName;
+    [SerializeField]
+    private string InteractText;
 
     public AudioClip DoorOpen;
     public AudioClip DoorClose;
@@ -16,6 +18,7 @@ public class LockDoorInteraction : MonoBehaviour, IInteraction
     private AudioSource _doorAudio;
 
     private bool _isOpen;
+    private bool _isUnLocked;
     private float _elapsedTime;
     private float _doorOpenCooltime = 1.4f;
     private float _initTime = 0f;
@@ -27,7 +30,14 @@ public class LockDoorInteraction : MonoBehaviour, IInteraction
         _doorAudio = GetComponent<AudioSource>();
         _activeText = "¹® ¿­±â (E)";
     }
-    
+
+    private void Update()
+    {
+        if (ItemManager.Instance.CurrentItemName == UnlockItemName)
+        {
+            _activeText = InteractText;
+        }
+    }
     public void Interaction()
     {
         StartCoroutine(Move());
@@ -35,9 +45,10 @@ public class LockDoorInteraction : MonoBehaviour, IInteraction
 
     IEnumerator Move()
     {
-        if(ItemManager.Instance.CurrentItemName == UnlockItemName)
+        if(ItemManager.Instance.CurrentItemName == UnlockItemName || _isUnLocked)
         {
-
+            ItemManager.Instance.UsedItem();
+            _isUnLocked = true;
             _isMoveDoor = true;
             if (_isOpen)
             {

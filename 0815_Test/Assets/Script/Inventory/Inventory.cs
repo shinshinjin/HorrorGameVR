@@ -1,22 +1,43 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Inventory : MonoBehaviour
 {
     private int _slotCount = 0;
     [SerializeField]
     private Slot[] Slots;
+    [SerializeField]
+    private Image _image;
+    [SerializeField]
+    private Sprite DefaultItemImage;
 
     private void Awake()
     {
         Slots = GetComponentsInChildren<Slot>();
+        _image.sprite = DefaultItemImage;
+        //_image = GetComponentInChildren<Image>();
     }
     private void Update()
     {
         SetInventory();
+        DrawItemImage();
     }
 
+    private void DrawItemImage()
+    {
+        if (ItemManager.Instance.CurrentSlot != null && ItemManager.Instance.isSelected[ItemManager.Instance.CurrentSlot.SlotIndex])
+        {
+            _image.sprite = ItemManager.Instance.CurrentSlot.ItemImage;
+        }
+        
+        if(ItemManager.Instance.CurrentSlot != null && ItemManager.Instance.CurrentSlot._isItemIn == false)
+        {
+            _image.sprite = DefaultItemImage;
+        }
+        
+    }
     public void SetInventory()
     {
         for(int i = 0; i < 10; i++)

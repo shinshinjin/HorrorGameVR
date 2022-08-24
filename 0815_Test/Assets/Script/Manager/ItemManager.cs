@@ -28,6 +28,9 @@ public class ItemManager : MonoBehaviour
     public bool[] isSelected;
 
     public string CurrentItemName;
+    public Slot CurrentSlot;
+    public Sprite DefaultSlotImage;
+    public Sprite DefaultItemImage;
 
     public static ItemManager Instance
     {
@@ -45,12 +48,22 @@ public class ItemManager : MonoBehaviour
     {
         DontDestroyOnLoad(gameObject);
     }
-
+    
+    /// <summary>
+    /// 선택 된 인벤토리 슬롯을 전부 해제하는 함수
+    /// </summary>
     public void ResetSelect()
     {
         for(int i = 0; i < isSelected.Length; i++)
         {
             isSelected[i] = false;
         }
+    }
+
+    public void UsedItem()
+    {
+        CurrentSlot.ItemName = "";
+        CurrentSlot.ItemImage = DefaultSlotImage;
+        CurrentSlot._isItemIn = false;
     }
 }

@@ -16,6 +16,7 @@ public class UserInput : MonoBehaviour
     
     private void FixedUpdate()
     {
+
         InputX = Input.GetAxisRaw("Horizontal");
         InputY = Input.GetAxisRaw("Vertical");
 
