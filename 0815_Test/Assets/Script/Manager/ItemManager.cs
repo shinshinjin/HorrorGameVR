@@ -22,6 +22,7 @@ public class ItemManager : MonoBehaviour
     public bool AlreadyHaveRingKey { get; set; }
     public bool IsHave101Key { get; set; }
     public bool AlreadyHave101Key { get; set; }
+    public bool IsHaveLighter { get; set; }
 
     public ItemData[] itemDatas;
 

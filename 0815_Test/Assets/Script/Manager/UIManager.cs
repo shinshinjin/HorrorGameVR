@@ -13,6 +13,7 @@ public class UIManager : MonoBehaviour
     public GameObject ViewInfoText;
     public Text InfoText;
     public Text GuideText;
+    public Text SelectedItemTextWithInventory;
     
     public static UIManager Instance
     {
@@ -45,7 +46,8 @@ public class UIManager : MonoBehaviour
 
     public void SetSelectedItemText(string itemName)
     {
-        SelectedItemText.text = $"선택한 아이템 : {itemName}";
+        SelectedItemText.text = itemName;
+        SelectedItemTextWithInventory.text = itemName;
     }
 
     public void DrawInfoText()
