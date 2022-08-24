@@ -18,10 +18,9 @@ public class SuprizeAI_01 : MonoBehaviour
         if (other.tag == "Player")
         {
             isLightOff = true;
-            Debug.Log("응급실 나감");
+            Debug.Log("응급실 유지");
             Doctor.gameObject.SetActive(true);
             _light_source.gameObject.GetComponent<Light>().color = Color.red;
-            
         }
     }
 
@@ -30,6 +29,7 @@ public class SuprizeAI_01 : MonoBehaviour
         Destroy(Doctor.gameObject, 2f);
         Destroy(Light.gameObject, 2f);
         gameObject.SetActive(false);
+        StopAllCoroutines();
     }
 
     void LightOff()

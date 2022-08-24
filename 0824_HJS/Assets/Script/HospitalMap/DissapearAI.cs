@@ -4,11 +4,15 @@ using UnityEngine;
 
 public class DissapearAI : MonoBehaviour
 {
+    [SerializeField]
+    GameObject _Door;
+
     private void OnTriggerEnter(Collider other)
     {
        if(other.tag == "Doctor")
         {
             other.gameObject.SetActive(false);
+            _Door.gameObject.SetActive(true);
         }
         gameObject.SetActive(false);
     }
