@@ -17,7 +17,6 @@ public class Inventory : MonoBehaviour
     {
         Slots = GetComponentsInChildren<Slot>();
         _image.sprite = DefaultItemImage;
-        //_image = GetComponentInChildren<Image>();
     }
     private void Update()
     {
