@@ -15,6 +15,9 @@ TagManager:
   - Screen
   - BeamProject
   - KeyBoard
+  - Item_Switch
+  - Monitor
+  - Box
   layers:
   - Default
   - TransparentFX

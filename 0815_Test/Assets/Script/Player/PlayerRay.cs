@@ -11,6 +11,7 @@ public class PlayerRay : MonoBehaviour
     private BeamProjectInteraction _beamProject;
     private ScreenPuzzleKeyBoardInteraction _keyBoard;
     private MonitorInteraction _monitor;
+    private BoxInteraction _box;
     private RaycastHit _hit;
     private float _distance = 6f;
 
@@ -50,10 +51,17 @@ public class PlayerRay : MonoBehaviour
                 KeyBoardInteract();
             }
 
-            if(_hit.transform.CompareTag("Monitor"))
+            if (_hit.transform.CompareTag("Box"))
             {
-
+                BoxInteract();
             }
+
+            if (_hit.transform.CompareTag("Monitor"))
+            {
+                MonitorInteract();
+            }
+
+
         }
         
     }
@@ -127,7 +135,15 @@ public class PlayerRay : MonoBehaviour
             _keyBoard.Interaction();
         }
     }
-
+    private void BoxInteract()
+    {
+        _box = _hit.transform.GetComponent<BoxInteraction>();
+        UIManager.Instance.DrawInteractText(_box._activeText);
+        if (Input.GetKeyDown(KeyCode.E) && GameManager.Instance.IsPaused == false)
+        {
+            _box.Interaction();
+        }
+    }
     private void MonitorInteract()
     {
         _monitor = _hit.transform.GetComponent<MonitorInteraction>();
