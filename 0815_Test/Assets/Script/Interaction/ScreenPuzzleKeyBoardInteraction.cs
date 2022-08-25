@@ -7,6 +7,8 @@ public class ScreenPuzzleKeyBoardInteraction : MonoBehaviour, IInteraction
     public string _activeText;
     public int _screenIndex;
 
+    public BeamProjectInteraction _beam;
+
     public GameObject[] Screens;
 
     private int _currentScreenIndex;
@@ -18,16 +20,19 @@ public class ScreenPuzzleKeyBoardInteraction : MonoBehaviour, IInteraction
     }
     public void Interaction()
     {
-        if(_screenIndex > 5)
+        if(_beam._isBeamOn)
         {
-            _screenIndex = 0;
+            if (_screenIndex > 5)
+            {
+                _screenIndex = 0;
+            }
+            if (_screenIndex < 0)
+            {
+                _screenIndex = 5;
+            }
+            Screens[_currentScreenIndex].SetActive(false);
+            Screens[_screenIndex].SetActive(true);
+            _currentScreenIndex = _screenIndex;
         }
-        if(_screenIndex < 0)
-        {
-            _screenIndex = 5;
-        }
-        Screens[_currentScreenIndex].SetActive(false);
-        Screens[_screenIndex].SetActive(true);
-        _currentScreenIndex = _screenIndex;
     }
 }
