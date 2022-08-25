@@ -8,7 +8,7 @@ public class BeamProjectInteraction : MonoBehaviour, IInteraction
 
     private Light _light;
 
-    private bool _isBeamOn;
+    public bool _isBeamOn;
 
     private void Awake()
     {
