@@ -18,6 +18,6 @@ public class BoxInteraction : MonoBehaviour, IInteraction
         Debug.Log("Á¶Á®¹ö·È´Ù...");
         _gameObject[0].SetActive(true);
         _gameObject[1].SetActive(false);
-        gameObject.SetActive(false);
+        Destroy(gameObject, 5f);
     }
 }

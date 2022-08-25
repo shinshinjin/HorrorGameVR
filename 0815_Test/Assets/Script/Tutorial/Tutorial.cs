@@ -13,35 +13,33 @@ public class Tutorial : MonoBehaviour
     [SerializeField]
     private string[] TutorialOverText;
 
+    public GameObject TutorialTrigger;
     
     private void Update()
     {
         
         if(GameManager.Instance.IsMoveTutorialOver == false)
         {
+            TutorialTrigger.GetComponent<PlayerRay>().enabled = false;
             StartCoroutine(MoveTutorial());
             GameManager.Instance.IsMoveTutorialOver = true;
-            UIManager.Instance.DrawInfoText();
         }
 
         if (GameManager.Instance.IsInteractTutorialOver == false && GameManager.Instance.IsStartInteractTutorial)
         {
             StartCoroutine(InteractTutorial());
             GameManager.Instance.IsInteractTutorialOver = true;
-            UIManager.Instance.DrawInfoText();
         }
 
         if (GameManager.Instance.IsUseItemTutorialOver == false && GameManager.Instance.IsStartUseItemTutorial)
         {
             StartCoroutine(UseItemTutorial());
             GameManager.Instance.IsUseItemTutorialOver = true;
-            UIManager.Instance.DrawInfoText();
         }
 
         if(GameManager.Instance.IsTutorialOver)
         {
             StartCoroutine(TutorialOver());
-            UIManager.Instance.DrawInfoText();
             GameManager.Instance.IsTutorialOver = false;
         }
 
@@ -51,18 +49,20 @@ public class Tutorial : MonoBehaviour
     {
         for(int i = 0; i < MoveTutorialText.Length; i++)
         {
-            UIManager.Instance.SetInfoText(MoveTutorialText[i]);
-            yield return new WaitForSeconds(1f);
+            StartCoroutine(UIManager.Instance.DrawInfoText(MoveTutorialText[i]));
+            yield return new WaitForSeconds(3f);
         }
         GameManager.Instance.IsInteractTutorialOver = false;
+        GameManager.Instance.IsPaused = false;
+        TutorialTrigger.GetComponent<PlayerRay>().enabled = true;
     }
 
     IEnumerator InteractTutorial()
     {
         for (int i = 0; i < InteractTutorialText.Length; i++)
         {
-            UIManager.Instance.SetInfoText(InteractTutorialText[i]);
-            yield return new WaitForSeconds(1f);
+            StartCoroutine(UIManager.Instance.DrawInfoText(InteractTutorialText[i]));
+            yield return new WaitForSeconds(3f);
         }
         GameManager.Instance.IsUseItemTutorialOver = false;
     }
@@ -71,8 +71,8 @@ public class Tutorial : MonoBehaviour
     {
         for (int i = 0; i < UseItemTutorialText.Length; i++)
         {
-            UIManager.Instance.SetInfoText(UseItemTutorialText[i]);
-            yield return new WaitForSeconds(1f);
+            StartCoroutine(UIManager.Instance.DrawInfoText(UseItemTutorialText[i]));
+            yield return new WaitForSeconds(3f);
         }
     }
 
@@ -80,8 +80,8 @@ public class Tutorial : MonoBehaviour
     {
         for (int i = 0; i < TutorialOverText.Length; i++)
         {
-            UIManager.Instance.SetInfoText(TutorialOverText[i]);
-            yield return new WaitForSeconds(1f);
+            StartCoroutine(UIManager.Instance.DrawInfoText(TutorialOverText[i]));
+            yield return new WaitForSeconds(3f);
         }
     }
 }

@@ -53,12 +53,12 @@ public class PlayerMove : MonoBehaviour
             _isSitDown = false;
         }
 
+        PlayMoveSound();
         if (GameManager.Instance.IsPaused == false)
         {
             Sit();
             Run();
             Move();
-            PlayMoveSound();
         }
 
     }
@@ -130,7 +130,7 @@ public class PlayerMove : MonoBehaviour
             _isMoving = true;
         }
 
-        if ((_input.InputX == 0f && _input.InputY == 0f && _isMoving == true) || _isChangeAudioClip)
+        if ((_input.InputX == 0f && _input.InputY == 0f && _isMoving == true) || _isChangeAudioClip || GameManager.Instance.IsPaused)
         {
             _audioSource.Stop();
             _isMoving = false;

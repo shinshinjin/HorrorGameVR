@@ -34,6 +34,10 @@ public class UserInput : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Tab))
         {
             IsInventoryOn = !IsInventoryOn;
+            if (IsInventoryOn)
+                StartCoroutine(UIManager.Instance.DrawDialogueText("인벤토리가 켜졌습니다"));
+            else
+                UIManager.Instance.UnVisibleDialogueText();
         }
     }
 }
