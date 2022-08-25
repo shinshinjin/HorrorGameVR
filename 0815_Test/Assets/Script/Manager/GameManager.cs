@@ -21,6 +21,10 @@ public class GameManager : MonoBehaviour
     public bool IsUseItemTutorialOver;
 
     public bool IsInFan;
+
+    // 병원관련 텍스트
+    public bool IsLighterEventOver = false;
+
     public static GameManager Instance
     {
         get

@@ -1,11 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class NoWayText : MonoBehaviour
 {
-    private void OnTriggerEnter()
+    [SerializeField]
+    private string ThisNotWay;
+
+    private void OnTriggerStay()
     {
-        Debug.Log("이곳은 길이 아님!!");
+        UIManager.Instance.SetInfoText(ThisNotWay);
+        UIManager.Instance.DrawInfoText();
+    }
+
+    private void OnTriggerExit()
+    {
+        UIManager.Instance.EraseInfoText();
     }
 }
