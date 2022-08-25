@@ -9,10 +9,10 @@ public class DoorInteraction : MonoBehaviour , IInteraction
 
     public AudioClip DoorOpen;
     public AudioClip DoorClose;
+    public bool IsOpen;
 
     private AudioSource _doorAudio;
 
-    private bool _isOpen;
     private float _elapsedTime;
     private float _doorOpenCooltime = 1.4f;
     private float _initTime = 0f;
@@ -35,12 +35,12 @@ public class DoorInteraction : MonoBehaviour , IInteraction
     IEnumerator Move()
     {
         IsMoveDoor = true;
-        if (_isOpen)
+        if (IsOpen)
         {
             _doorAudio.clip = DoorClose;
             ActiveText = "문 열기 (E)";
             StartCoroutine(Close());
-            _isOpen = false;
+            IsOpen = false;
         }
         else
         {
@@ -48,7 +48,7 @@ public class DoorInteraction : MonoBehaviour , IInteraction
             ActiveText = "문 닫기 (E)";
             _doorAudio.Play();
             StartCoroutine(Open());
-            _isOpen = true;
+            IsOpen = true;
         }
         yield return null;
     }
@@ -69,7 +69,7 @@ public class DoorInteraction : MonoBehaviour , IInteraction
             yield return null;
         }
     }
-    IEnumerator Close()
+    public IEnumerator Close()
     {
         while (true)
         {
