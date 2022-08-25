@@ -11,6 +11,10 @@ TagManager:
   - Door
   - LockDoor
   - TutorialDrawer
+  - Doctor
+  - Screen
+  - BeamProject
+  - KeyBoard
   layers:
   - Default
   - TransparentFX
@@ -19,7 +23,7 @@ TagManager:
   - Water
   - UI
   - Item
-  - 
+  - BeamProject
   - 
   - 
   - 

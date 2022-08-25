@@ -4,14 +4,26 @@ using UnityEngine;
 
 public class GYMainDoorChanger : MonoBehaviour
 {
-    public GameObject[] _door;
+    private SphereCollider _collider;
+    private DoorInteraction _doorInteraction;
+    private bool _isEventActived;
 
-    private void Update()
+    private void Awake()
     {
-        if(ItemManager.Instance.IsHaveNoteBook)
+        _collider = GetComponentInChildren<SphereCollider>();
+        _doorInteraction = GetComponentInChildren<DoorInteraction>();
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (ItemManager.Instance.IsHaveNoteBook && _isEventActived == false)
         {
-            _door[0].SetActive(false);
-            _door[1].SetActive(true);
+            _isEventActived = true;
+            if(_doorInteraction.IsOpen)
+            {
+                _doorInteraction.IsMoveDoor = true;
+                StartCoroutine(_doorInteraction.Close());
+            }
+            gameObject.tag = "LockDoor";
         }
     }
 }

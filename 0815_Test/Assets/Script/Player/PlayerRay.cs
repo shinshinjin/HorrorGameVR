@@ -8,6 +8,8 @@ public class PlayerRay : MonoBehaviour
     private DoorInteraction _door;
     private LockDoorInteraction _lockDoor;
     private ItemInteraction _item;
+    private BeamProjectInteraction _beamProject;
+    private ScreenPuzzleKeyBoardInteraction _keyBoard;
     private RaycastHit _hit;
     private float _distance = 6f;
 
@@ -37,7 +39,15 @@ public class PlayerRay : MonoBehaviour
                 ItemInteract();
             }
 
+            if(_hit.transform.CompareTag("BeamProject"))
+            {
+                BeamProjectInteract();
+            }
 
+            if (_hit.transform.CompareTag("KeyBoard"))
+            {
+                KeyBoardInteract();
+            }
         }
         
     }
@@ -83,6 +93,32 @@ public class PlayerRay : MonoBehaviour
         {
             _item.ItemName = _hit.transform.name;
             _item.Interaction();
+        }
+    }
+
+    private void BeamProjectInteract()
+    {
+        _beamProject = _hit.transform.GetComponent<BeamProjectInteraction>();
+        UIManager.Instance.DrawInteractText(_beamProject._activeText);
+        if(Input.GetKeyDown(KeyCode.E) && GameManager.Instance.IsPaused == false)
+        {
+            _beamProject.Interaction();
+        }
+    }
+
+    private void KeyBoardInteract()
+    {
+        _keyBoard = _hit.transform.GetComponent<ScreenPuzzleKeyBoardInteraction>();
+        UIManager.Instance.DrawInteractText(_keyBoard._activeText);
+        if(Input.GetKeyDown(KeyCode.Q) && GameManager.Instance.IsPaused == false)
+        {
+            _keyBoard._screenIndex--;
+            _keyBoard.Interaction();
+        }
+        if (Input.GetKeyDown(KeyCode.E) && GameManager.Instance.IsPaused == false)
+        {
+            _keyBoard._screenIndex++;
+            _keyBoard.Interaction();
         }
     }
 }

@@ -74,4 +74,5 @@ public class UIManager : MonoBehaviour
         GuideText.text = "";
     }
 
+
 }
