@@ -27,18 +27,21 @@ public class Tutorial : MonoBehaviour
 
         if (GameManager.Instance.IsInteractTutorialOver == false && GameManager.Instance.IsStartInteractTutorial)
         {
+            StopAllCoroutines();
             StartCoroutine(InteractTutorial());
             GameManager.Instance.IsInteractTutorialOver = true;
         }
 
         if (GameManager.Instance.IsUseItemTutorialOver == false && GameManager.Instance.IsStartUseItemTutorial)
         {
+            StopAllCoroutines();
             StartCoroutine(UseItemTutorial());
             GameManager.Instance.IsUseItemTutorialOver = true;
         }
 
         if(GameManager.Instance.IsTutorialOver)
         {
+            StopAllCoroutines();
             StartCoroutine(TutorialOver());
             GameManager.Instance.IsTutorialOver = false;
         }
