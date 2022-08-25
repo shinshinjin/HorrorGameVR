@@ -17,7 +17,6 @@ public class Inventory : MonoBehaviour
     {
         Slots = GetComponentsInChildren<Slot>();
         _image.sprite = DefaultItemImage;
-        //_image = GetComponentInChildren<Image>();
     }
     private void Update()
     {
@@ -31,25 +30,25 @@ public class Inventory : MonoBehaviour
         {
             _image.sprite = ItemManager.Instance.CurrentSlot.ItemImage;
         }
-        
-        if(ItemManager.Instance.CurrentSlot != null && ItemManager.Instance.CurrentSlot._isItemIn == false)
+
+        if (ItemManager.Instance.CurrentSlot != null && ItemManager.Instance.CurrentSlot._isItemIn == false)
         {
             _image.sprite = DefaultItemImage;
         }
-        
+
     }
     public void SetInventory()
     {
-        for(int i = 0; i < 10; i++)
+        for (int i = 0; i < 10; i++)
         {
-            if(Slots[i]._isItemIn == false)
+            if (Slots[i]._isItemIn == false)
             {
                 _slotCount = i;
                 break;
             }
         }
 
-        if(ItemManager.Instance.IsHave11ClassKey && ItemManager.Instance.Already11ClassHaveKey == false)
+        if (ItemManager.Instance.IsHave11ClassKey && ItemManager.Instance.Already11ClassHaveKey == false)
         {
             Slots[_slotCount].ItemName = ItemManager.Instance.itemDatas[0].ItemName;
             Slots[_slotCount].ItemImage = ItemManager.Instance.itemDatas[0].ItemImage;
@@ -113,5 +112,76 @@ public class Inventory : MonoBehaviour
             ItemManager.Instance.AlreadyHave101Key = true;
         }
 
+        if (ItemManager.Instance.IsHaveLighter && ItemManager.Instance.AlreadyHaveLighter == false)
+        {
+            Slots[_slotCount].ItemName = ItemManager.Instance.itemDatas[8].ItemName;
+            Slots[_slotCount].ItemImage = ItemManager.Instance.itemDatas[8].ItemImage;
+            Slots[_slotCount]._isItemIn = true;
+            ItemManager.Instance.AlreadyHaveLighter = true;
+        }
+
+        if (ItemManager.Instance.IsHaveScreenRemote && ItemManager.Instance.AlreadyHaveScreenRemote == false)
+        {
+            Slots[_slotCount].ItemName = ItemManager.Instance.itemDatas[9].ItemName;
+            Slots[_slotCount].ItemImage = ItemManager.Instance.itemDatas[9].ItemImage;
+            Slots[_slotCount]._isItemIn = true;
+            ItemManager.Instance.AlreadyHaveScreenRemote = true;
+        }
+
+        if (ItemManager.Instance.IsHaveCCTV && ItemManager.Instance.AlreadyHaveCCTV == false)
+        {
+            Slots[_slotCount].ItemName = ItemManager.Instance.itemDatas[10].ItemName;
+            Slots[_slotCount].ItemImage = ItemManager.Instance.itemDatas[10].ItemImage;
+            Slots[_slotCount]._isItemIn = true;
+            ItemManager.Instance.AlreadyHaveCCTV = true;
+        }
+
+        if (ItemManager.Instance.IsHave12ClassStorageKey && ItemManager.Instance.AlreadyHave12ClassStorageKey == false)
+        {
+            Slots[_slotCount].ItemName = ItemManager.Instance.itemDatas[11].ItemName;
+            Slots[_slotCount].ItemImage = ItemManager.Instance.itemDatas[11].ItemImage;
+            Slots[_slotCount]._isItemIn = true;
+            ItemManager.Instance.AlreadyHave12ClassStorageKey = true;
+        }
+
+        if (ItemManager.Instance.IsHaveLightSwitch && ItemManager.Instance.AlreadyHaveLightSwitch == false)
+        {
+            Slots[_slotCount].ItemName = ItemManager.Instance.itemDatas[12].ItemName;
+            Slots[_slotCount].ItemImage = ItemManager.Instance.itemDatas[12].ItemImage;
+            Slots[_slotCount]._isItemIn = true;
+            ItemManager.Instance.AlreadyHaveLightSwitch = true;
+        }
+
+        if (ItemManager.Instance.IsHaveBrain && ItemManager.Instance.AlreadyHaveBrain == false)
+        {
+            Slots[_slotCount].ItemName = ItemManager.Instance.itemDatas[13].ItemName;
+            Slots[_slotCount].ItemImage = ItemManager.Instance.itemDatas[13].ItemImage;
+            Slots[_slotCount]._isItemIn = true;
+            ItemManager.Instance.AlreadyHaveBrain = true;
+        }
+
+        if (ItemManager.Instance.IsHaveScreenCofferKey && ItemManager.Instance.AlreadyHaveScreenCofferKey == false)
+        {
+            Slots[_slotCount].ItemName = ItemManager.Instance.itemDatas[14].ItemName;
+            Slots[_slotCount].ItemImage = ItemManager.Instance.itemDatas[14].ItemImage;
+            Slots[_slotCount]._isItemIn = true;
+            ItemManager.Instance.AlreadyHaveScreenCofferKey = true;
+        }
+
+        if (ItemManager.Instance.IsHaveTherapyRoomKey && ItemManager.Instance.AlreadyHaveTherapyRoomKey == false)
+        {
+            Slots[_slotCount].ItemName = ItemManager.Instance.itemDatas[15].ItemName;
+            Slots[_slotCount].ItemImage = ItemManager.Instance.itemDatas[15].ItemImage;
+            Slots[_slotCount]._isItemIn = true;
+            ItemManager.Instance.AlreadyHaveTherapyRoomKey = true;
+        }
+
+        if (ItemManager.Instance.IsHaveHospitalKey && ItemManager.Instance.AlreadyHaveHospitalKey == false)
+        {
+            Slots[_slotCount].ItemName = ItemManager.Instance.itemDatas[16].ItemName;
+            Slots[_slotCount].ItemImage = ItemManager.Instance.itemDatas[16].ItemImage;
+            Slots[_slotCount]._isItemIn = true;
+            ItemManager.Instance.AlreadyHaveHospitalKey = true;
+        }
     }
 }

@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class GoToHospital : MonoBehaviour
 {
+    [SerializeField]
+    GameObject _gameObject;
+
     public Transform Player;
     public Transform Target;
     private void OnTriggerEnter(Collider other)
@@ -12,6 +15,7 @@ public class GoToHospital : MonoBehaviour
         {
             Debug.Log("병원 출발");
             Player.position = Target.position;
+            _gameObject.SetActive(false);
         }
     }
 }

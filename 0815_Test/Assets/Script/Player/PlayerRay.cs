@@ -8,6 +8,7 @@ public class PlayerRay : MonoBehaviour
     private DoorInteraction _door;
     private LockDoorInteraction _lockDoor;
     private ItemInteraction _item;
+    private SwitchInteraction _switch;
     private RaycastHit _hit;
     private float _distance = 6f;
 
@@ -37,6 +38,10 @@ public class PlayerRay : MonoBehaviour
                 ItemInteract();
             }
 
+            if(_hit.transform.CompareTag("Item_Switch"))
+            {
+                SwitchInteract();
+            }
 
         }
         
@@ -83,6 +88,16 @@ public class PlayerRay : MonoBehaviour
         {
             _item.ItemName = _hit.transform.name;
             _item.Interaction();
+        }
+    }
+
+    private void SwitchInteract()
+    {
+        _switch = _hit.transform.GetComponent<SwitchInteraction>();
+        UIManager.Instance.DrawInteractText(_switch._activeText);
+        if(Input.GetKeyDown(KeyCode.E) && GameManager.Instance.IsPaused == false)
+        {
+            _switch.Interaction();
         }
     }
 }

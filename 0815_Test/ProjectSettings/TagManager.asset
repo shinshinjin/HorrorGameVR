@@ -11,6 +11,8 @@ TagManager:
   - Door
   - LockDoor
   - TutorialDrawer
+  - Doctor
+  - Item_Switch
   layers:
   - Default
   - TransparentFX

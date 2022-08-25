@@ -6,6 +6,7 @@ public class ItemManager : MonoBehaviour
 {
     private static ItemManager _instance;
 
+    #region 아이템리스트
     public bool IsHave11ClassKey { get; set; }
     public bool Already11ClassHaveKey { get; set; }
     public bool IsHavePhone { get; set; }
@@ -23,6 +24,24 @@ public class ItemManager : MonoBehaviour
     public bool IsHave101Key { get; set; }
     public bool AlreadyHave101Key { get; set; }
     public bool IsHaveLighter { get; set; }
+    public bool AlreadyHaveLighter { get; set; }
+    public bool IsHaveScreenRemote { get; set; }
+    public bool AlreadyHaveScreenRemote { get; set; }
+    public bool IsHaveCCTV { get; set; }
+    public bool AlreadyHaveCCTV { get; set; }
+    public bool IsHave12ClassStorageKey { get; set; }
+    public bool AlreadyHave12ClassStorageKey { get; set; }
+    public bool IsHaveLightSwitch { get; set; }
+    public bool AlreadyHaveLightSwitch { get; set; }
+    public bool IsHaveBrain { get; set; }
+    public bool AlreadyHaveBrain { get; set; }
+    public bool IsHaveScreenCofferKey { get; set; }
+    public bool AlreadyHaveScreenCofferKey { get; set; }
+    public bool IsHaveTherapyRoomKey { get; set; }
+    public bool AlreadyHaveTherapyRoomKey { get; set; }
+    public bool IsHaveHospitalKey { get; set; }
+    public bool AlreadyHaveHospitalKey { get; set; }
+    #endregion
 
     public ItemData[] itemDatas;
 
@@ -37,7 +56,7 @@ public class ItemManager : MonoBehaviour
     {
         get
         {
-            if(_instance == null)
+            if (_instance == null)
             {
                 _instance = GameObject.FindObjectOfType<ItemManager>();
             }
@@ -49,13 +68,13 @@ public class ItemManager : MonoBehaviour
     {
         DontDestroyOnLoad(gameObject);
     }
-    
+
     /// <summary>
     /// 선택 된 인벤토리 슬롯을 전부 해제하는 함수
     /// </summary>
     public void ResetSelect()
     {
-        for(int i = 0; i < isSelected.Length; i++)
+        for (int i = 0; i < isSelected.Length; i++)
         {
             isSelected[i] = false;
         }

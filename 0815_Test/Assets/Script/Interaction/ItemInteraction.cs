@@ -2,14 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ItemInteraction : MonoBehaviour , IInteraction
+public class ItemInteraction : MonoBehaviour, IInteraction
 {
     public string ItemName { get; set; }
 
     private AudioSource _getItemSound;
 
     public string _activeText;
-    
+
     private void Awake()
     {
         _getItemSound = GetComponent<AudioSource>();
@@ -66,6 +66,51 @@ public class ItemInteraction : MonoBehaviour , IInteraction
         if (ItemName == "101호 열쇠")
         {
             ItemManager.Instance.IsHave101Key = true;
+        }
+
+        if (ItemName == "라이터")
+        {
+            ItemManager.Instance.IsHaveLighter = true;
+        }
+
+        if (ItemName == "빔 프로젝트 리모컨")
+        {
+            ItemManager.Instance.IsHaveScreenRemote = true;
+        }
+
+        if (ItemName == "CCTV")
+        {
+            ItemManager.Instance.IsHaveCCTV = true;
+        }
+
+        if (ItemName == "12강의실 창고방 열쇠")
+        {
+            ItemManager.Instance.IsHave12ClassStorageKey = true;
+        }
+
+        if (ItemName == "전등 스위치")
+        {
+            ItemManager.Instance.IsHaveLightSwitch = true;
+        }
+
+        if (ItemName == "누군가의 뇌")
+        {
+            ItemManager.Instance.IsHaveBrain = true;
+        }
+
+        if (ItemName == "스크린 금고 열쇠")
+        {
+            ItemManager.Instance.IsHaveScreenCofferKey = true;
+        }
+
+        if (ItemName == "작업요법실 열쇠")
+        {
+            ItemManager.Instance.IsHaveTherapyRoomKey = true;
+        }
+
+        if (ItemName == "병원 문 열쇠")
+        {
+            ItemManager.Instance.IsHaveHospitalKey = true;
         }
     }
     private void BreakItem()
