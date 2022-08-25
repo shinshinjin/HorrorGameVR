@@ -2,17 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BoxInteraction : MonoBehaviour
+public class BoxInteraction : MonoBehaviour, IInteraction
 {
-    // Start is called before the first frame update
-    void Start()
+    public GameObject[] _gameObject;
+
+    public string _activeText;
+
+    private void Awake()
     {
-        
+        _activeText = "박스 조지기";
     }
 
-    // Update is called once per frame
-    void Update()
+    public void Interaction()
     {
-        
+        Debug.Log("조져버렸다...");
+        _gameObject[0].SetActive(true);
+        _gameObject[1].SetActive(false);
     }
 }

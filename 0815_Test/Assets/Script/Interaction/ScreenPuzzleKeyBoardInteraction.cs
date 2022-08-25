@@ -16,7 +16,7 @@ public class ScreenPuzzleKeyBoardInteraction : MonoBehaviour, IInteraction
     private void Awake()
     {
         _currentScreenIndex = 0;
-        _activeText = "Q 버튼 => 이전스크린    E 버튼 => 다음스크린";
+        _activeText = "Q : Back  E : Next";
     }
     public void Interaction()
     {
