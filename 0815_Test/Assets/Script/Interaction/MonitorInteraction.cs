@@ -1,14 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class MonitorInteraction : MonoBehaviour, IInteraction
 {
+    public UnityEvent InteractMonitor;
     public string _activeText;
 
     [SerializeField]
     private GameObject[] _screen;
-    private bool _isScreenOn;
+    public bool _isScreenOn;
 
     private void Awake()
     {
@@ -31,7 +33,7 @@ public class MonitorInteraction : MonoBehaviour, IInteraction
         {
             for (int i = 0; i < _screen.Length; i++)
             {
-                _screen[i].SetActive(false);
+                _screen[0].SetActive(false);
             }
             _isScreenOn = false;
         }
@@ -39,9 +41,10 @@ public class MonitorInteraction : MonoBehaviour, IInteraction
         {
             for (int i = 0; i < _screen.Length; i++)
             {
-                _screen[i].SetActive(true);
+                _screen[0].SetActive(true);
             }
             _isScreenOn = true;
         }
+        InteractMonitor.Invoke();
     }
 }

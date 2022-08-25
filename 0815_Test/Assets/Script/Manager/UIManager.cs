@@ -10,10 +10,13 @@ public class UIManager : MonoBehaviour
     public GameObject ViewInteractText;
     public Text InteractText;
     public Text SelectedItemText;
-    public GameObject ViewInfoText;
     public Text InfoText;
+    public GameObject DialogueUI;
+    public Text Dialogue;
     public Text GuideText;
     public Text SelectedItemTextWithInventory;
+
+    private float _drawOneWordTime = 0.05f;
     
     public static UIManager Instance
     {
@@ -49,20 +52,19 @@ public class UIManager : MonoBehaviour
         SelectedItemText.text = itemName;
         SelectedItemTextWithInventory.text = itemName;
     }
-
-    public void DrawInfoText()
-    {
-        ViewInfoText.SetActive(true);
-    }
-
     public void EraseInfoText()
     {
-        ViewInfoText.SetActive(false);
+        InfoText.text = "";
     }
 
-    public void SetInfoText(string infoText)
+    public IEnumerator DrawInfoText(string infoText)
     {
-        InfoText.text = infoText;
+        InfoText.text = "";
+        for (int i = 0; i < infoText.Length; i++)
+        {
+            InfoText.text += infoText[i];
+            yield return new WaitForSeconds(_drawOneWordTime);
+        }
     }
 
     public void SetAndDrawGuideText(string guideText)
@@ -74,5 +76,19 @@ public class UIManager : MonoBehaviour
         GuideText.text = "";
     }
 
+    public void UnVisibleDialogueText()
+    {
+        DialogueUI.SetActive(false);
+    }
 
+    public IEnumerator DrawDialogueText(string dialogue)
+    {
+        DialogueUI.SetActive(true);
+        Dialogue.text = "";
+        for (int i = 0; i < dialogue.Length; i++)
+        {
+            Dialogue.text += dialogue[i];
+            yield return new WaitForSeconds(_drawOneWordTime);
+        }
+    }
 }

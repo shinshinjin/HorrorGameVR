@@ -21,7 +21,7 @@ public class PlayerLight : MonoBehaviour
         }
         else
         {
-            _light.range = 10f;
+            _light.range = 1f;
         }
     }
 }
