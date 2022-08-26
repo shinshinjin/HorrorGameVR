@@ -17,6 +17,8 @@ public class PlayerRay : MonoBehaviour
     private CCTVInteraction _CCTV;
     private SwitchInteraction _switch;
     private ButtonInteraction _tempSwitch;
+    private VentInteraction _vent;
+    private GarbageDumpInteraction _garbage;
     private RaycastHit _hit;
     private float _distance = 6f;
 
@@ -126,7 +128,6 @@ public class PlayerRay : MonoBehaviour
             _door.Interaction();
         }
     }
-
     private void ItemInteract()
     {
         _item = _hit.transform.GetComponent<ItemInteraction>();
@@ -137,7 +138,6 @@ public class PlayerRay : MonoBehaviour
             _item.Interaction();
         }
     }
-
     private void BeamProjectInteract()
     {
         _beamProject = _hit.transform.GetComponent<BeamProjectInteraction>();
@@ -147,7 +147,6 @@ public class PlayerRay : MonoBehaviour
             _beamProject.Interaction();
         }
     }
-
     private void KeyBoardInteract()
     {
         _keyBoard = _hit.transform.GetComponent<ScreenPuzzleKeyBoardInteraction>();
@@ -181,7 +180,6 @@ public class PlayerRay : MonoBehaviour
             _monitor.Interaction();
         }
     }
-
     private void CofferInteract()
     {
         _coffer = _hit.transform.GetComponent<CofferInteraction>();
@@ -191,7 +189,6 @@ public class PlayerRay : MonoBehaviour
             _coffer.Interaction();
         }
     }
-
     private void CCTVInteract()
     {
         _CCTV = _hit.transform.GetComponent<CCTVInteraction>();
@@ -201,7 +198,6 @@ public class PlayerRay : MonoBehaviour
             _CCTV.Interaction();
         }
     }
-
     private void NumberCofferInteract()
     {
         _numberCoffer = _hit.transform.GetComponent<NumberCofferInteraction>();
@@ -211,7 +207,6 @@ public class PlayerRay : MonoBehaviour
             _numberCoffer.Interaction();
         }
     }
-
     private void SwitchInteract()
     {
         _switch = _hit.transform.GetComponent<SwitchInteraction>();
@@ -221,11 +216,28 @@ public class PlayerRay : MonoBehaviour
             _switch.Interaction();
         }
     }
-
     private void TempSwitchInteract()
     {
         _tempSwitch = _hit.transform.GetComponent<ButtonInteraction>();
         UIManager.Instance.DrawInteractText(_tempSwitch._activeText);
+        if (Input.GetKeyDown(KeyCode.E) && GameManager.Instance.IsPaused == false)
+        {
+            _tempSwitch.Interaction();
+        }
+    }
+    private void VentInteract()
+    {
+        _vent = _hit.transform.GetComponent<VentInteraction>();
+        UIManager.Instance.DrawInteractText(_vent._activeText);
+        if (Input.GetKeyDown(KeyCode.E) && GameManager.Instance.IsPaused == false)
+        {
+            _vent.Interaction();
+        }
+    }
+    private void GarbageDumpInteract()
+    {
+        _garbage = _hit.transform.GetComponent<GarbageDumpInteraction>();
+        UIManager.Instance.DrawInteractText(_garbage._activeText);
         if (Input.GetKeyDown(KeyCode.E) && GameManager.Instance.IsPaused == false)
         {
             _tempSwitch.Interaction();
