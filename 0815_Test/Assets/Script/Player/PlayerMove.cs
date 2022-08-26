@@ -63,12 +63,6 @@ public class PlayerMove : MonoBehaviour
 
     }
 
-    private void Update()
-    {
-        
-
-    }
-
     private void Move()
     {
         if (!_isRunning && !_isSitDown && _audioSource.clip != Walking)

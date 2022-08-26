@@ -8,7 +8,11 @@ public class InventoryOnOff : MonoBehaviour
 
     public GameObject Inventory;
 
-    private void Update()
+    private void Start()
+    {
+        Inventory.SetActive(false);
+    }
+    public void InventoryOnOffFunc()
     {
         Inventory.SetActive(_input.IsInventoryOn);
         if(_input.IsInventoryOn)

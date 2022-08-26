@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class PLMonitorPuzzle : MonoBehaviour
 {
+    public GameObject Class12Key;
+
+    public AudioClip DropKey;
+
     [SerializeField]
     private MonitorInteraction[] Monitor;
 
@@ -52,6 +56,8 @@ public class PLMonitorPuzzle : MonoBehaviour
         if(_PLClassPuzzleMonitorOnCorrect && _PLClassPuzzleMonitorOffCorrect)
         {
             Debug.Log("∆€¡Ò ¿ﬂ ¿€µøµ ");
+            GameManager.Instance.PlaySoundFromPlayer(DropKey);
+            Class12Key.SetActive(true);
         }
     }
 }

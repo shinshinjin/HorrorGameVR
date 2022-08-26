@@ -6,6 +6,8 @@ public class GameManager : MonoBehaviour
 {
     private static GameManager _instance;
 
+    public Transform Player;
+
     public bool IsMouseLocked = true;
 
     public bool IsTutorialOver;
@@ -19,7 +21,6 @@ public class GameManager : MonoBehaviour
 
     public bool IsStartUseItemTutorial;
     public bool IsUseItemTutorialOver;
-
 
     public bool IsInFan;
     public static GameManager Instance
@@ -39,5 +40,8 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
-    
+    public void PlaySoundFromPlayer(AudioClip clip)
+    {
+        AudioSource.PlayClipAtPoint(clip, Player.position);
+    }
 }

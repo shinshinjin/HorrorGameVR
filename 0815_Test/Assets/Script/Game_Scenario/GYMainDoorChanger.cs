@@ -24,6 +24,7 @@ public class GYMainDoorChanger : MonoBehaviour
                 StartCoroutine(_doorInteraction.Close());
             }
             gameObject.tag = "LockDoor";
+            _collider.enabled = false;
         }
     }
 }

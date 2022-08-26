@@ -85,5 +85,6 @@ public class ItemManager : MonoBehaviour
         CurrentSlot.ItemName = "";
         CurrentSlot.ItemImage = DefaultSlotImage;
         CurrentSlot._isItemIn = false;
+        UIManager.Instance.SelectedItemTextWithInventory.text = "";
     }
 }
