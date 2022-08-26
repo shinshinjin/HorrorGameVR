@@ -13,7 +13,13 @@ public class UserInput : MonoBehaviour
     public bool IsLightOn;
     public bool IsInventoryOn;
 
-    
+    private AudioSource _handLightSound;
+    public AudioClip HandLightSound;
+
+    private void Awake()
+    {
+        _handLightSound = GetComponent<AudioSource>();
+    }
     private void FixedUpdate()
     {
 
@@ -29,6 +35,7 @@ public class UserInput : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.F) && ItemManager.Instance.IsHavePhone)
         {
             IsLightOn = !IsLightOn;
+            _handLightSound.PlayOneShot(HandLightSound);
         }
 
         if (Input.GetKeyDown(KeyCode.Tab))

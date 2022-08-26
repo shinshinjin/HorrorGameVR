@@ -18,6 +18,7 @@ TagManager:
   - Item_Switch
   - Monitor
   - Box
+  - Coffer
   layers:
   - Default
   - TransparentFX

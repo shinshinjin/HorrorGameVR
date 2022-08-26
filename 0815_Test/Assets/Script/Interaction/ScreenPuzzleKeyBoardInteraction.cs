@@ -7,7 +7,7 @@ public class ScreenPuzzleKeyBoardInteraction : MonoBehaviour, IInteraction
     public string _activeText;
     public int _screenIndex;
 
-    public BeamProjectInteraction _beam;
+    public BeamProjectInteraction Beam;
 
     public GameObject[] Screens;
 
@@ -16,11 +16,21 @@ public class ScreenPuzzleKeyBoardInteraction : MonoBehaviour, IInteraction
     private void Awake()
     {
         _currentScreenIndex = 0;
-        _activeText = "Q : Back  E : Next";
+    }
+    private void Update()
+    {
+        if(Beam._isBeamOn)
+        {
+            _activeText = "Q : Back  E : Next";
+        }
+        else
+        {
+            _activeText = "먼저, 빔 프로젝트를 켜자";
+        }
     }
     public void Interaction()
     {
-        if(_beam._isBeamOn)
+        if(Beam._isBeamOn)
         {
             if (_screenIndex > 5)
             {
