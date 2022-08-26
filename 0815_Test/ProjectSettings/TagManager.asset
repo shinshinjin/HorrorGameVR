@@ -19,6 +19,7 @@ TagManager:
   - Monitor
   - Box
   - Switch
+  - TempSwitch
   layers:
   - Default
   - TransparentFX
@@ -28,7 +29,7 @@ TagManager:
   - UI
   - Item
   - BeamProject
-  - 
+  - OnlyPlayer
   - 
   - 
   - 

@@ -13,6 +13,7 @@ public class PlayerRay : MonoBehaviour
     private MonitorInteraction _monitor;
     private BoxInteraction _box;
     private SwitchInteraction _switch;
+    private ButtonInteraction _tempSwitch;
     private RaycastHit _hit;
     private float _distance = 6f;
 
@@ -65,6 +66,11 @@ public class PlayerRay : MonoBehaviour
             if (_hit.transform.CompareTag("Switch"))
             {
                 SwitchInteract();
+            }
+
+            if (_hit.transform.CompareTag("TempSwitch"))
+            {
+                TempSwitchInteract();
             }
 
 
@@ -167,6 +173,16 @@ public class PlayerRay : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E) && GameManager.Instance.IsPaused == false)
         {
             _switch.Interaction();
+        }
+    }
+
+    private void TempSwitchInteract()
+    {
+        _tempSwitch = _hit.transform.GetComponent<ButtonInteraction>();
+        UIManager.Instance.DrawInteractText(_tempSwitch._activeText);
+        if (Input.GetKeyDown(KeyCode.E) && GameManager.Instance.IsPaused == false)
+        {
+            _tempSwitch.Interaction();
         }
     }
 }
