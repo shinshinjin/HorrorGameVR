@@ -8,6 +8,8 @@ public class InventoryOnOff : MonoBehaviour
 
     public GameObject Inventory;
 
+    public NumberCofferInteraction Coffer;
+
     private void Start()
     {
         Inventory.SetActive(false);
@@ -20,7 +22,7 @@ public class InventoryOnOff : MonoBehaviour
             GameManager.Instance.IsMouseLocked = false;
             GameManager.Instance.IsPaused = true;
         }
-        else
+        else if(Coffer._isActive == false)
         {
             GameManager.Instance.IsMouseLocked = true;
             GameManager.Instance.IsPaused = false;

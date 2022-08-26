@@ -194,7 +194,7 @@ public class PlayerRay : MonoBehaviour
     {
         _numberCoffer = _hit.transform.GetComponent<NumberCofferInteraction>();
         UIManager.Instance.DrawInteractText(_numberCoffer._activeText);
-        if (Input.GetKeyDown(KeyCode.E) && GameManager.Instance.IsPaused == false)
+        if (Input.GetKeyDown(KeyCode.E))
         {
             _numberCoffer.Interaction();
         }
