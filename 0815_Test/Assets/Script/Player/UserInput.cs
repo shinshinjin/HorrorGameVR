@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class UserInput : MonoBehaviour
 {
+    public UnityEvent InventoryOn;
     public float InputX;
     public float InputY;
 
@@ -41,6 +43,7 @@ public class UserInput : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Tab))
         {
             IsInventoryOn = !IsInventoryOn;
+            InventoryOn.Invoke();
             if (IsInventoryOn)
                 StartCoroutine(UIManager.Instance.DrawDialogueText("인벤토리가 켜졌습니다"));
             else

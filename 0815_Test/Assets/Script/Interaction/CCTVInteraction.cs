@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class CCTVInteraction : MonoBehaviour, IInteraction
 {
+    public UnityEvent OnCCTV;
     public string _activeText;
     public GameObject[] CCTV;
 
@@ -30,6 +32,8 @@ public class CCTVInteraction : MonoBehaviour, IInteraction
             CCTV[0].SetActive(true);
             CCTV[1].SetActive(true);
             _activeText = "CCTV가 이미 장착되어 있습니다";
+            OnCCTV.Invoke();
+            ItemManager.Instance.UsedItem();
         }
     }
 

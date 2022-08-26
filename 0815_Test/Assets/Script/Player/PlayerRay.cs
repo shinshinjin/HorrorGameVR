@@ -13,6 +13,7 @@ public class PlayerRay : MonoBehaviour
     private MonitorInteraction _monitor;
     private BoxInteraction _box;
     private CofferInteraction _coffer;
+    private NumberCofferInteraction _numberCoffer;
     private CCTVInteraction _CCTV;
     private RaycastHit _hit;
     private float _distance = 6f;
@@ -71,6 +72,11 @@ public class PlayerRay : MonoBehaviour
             if(_hit.transform.CompareTag("CCTV"))
             {
                 CCTVInteract();
+            }
+
+            if (_hit.transform.CompareTag("NumberCoffer"))
+            {
+                NumberCofferInteract();
             }
         }
         
@@ -181,6 +187,16 @@ public class PlayerRay : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.E) && GameManager.Instance.IsPaused == false)
         {
             _CCTV.Interaction();
+        }
+    }
+
+    private void NumberCofferInteract()
+    {
+        _numberCoffer = _hit.transform.GetComponent<NumberCofferInteraction>();
+        UIManager.Instance.DrawInteractText(_numberCoffer._activeText);
+        if (Input.GetKeyDown(KeyCode.E) && GameManager.Instance.IsPaused == false)
+        {
+            _numberCoffer.Interaction();
         }
     }
 }
