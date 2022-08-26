@@ -12,6 +12,7 @@ public class PlayerRay : MonoBehaviour
     private ScreenPuzzleKeyBoardInteraction _keyBoard;
     private MonitorInteraction _monitor;
     private BoxInteraction _box;
+    private SwitchInteraction _switch;
     private RaycastHit _hit;
     private float _distance = 6f;
 
@@ -59,6 +60,11 @@ public class PlayerRay : MonoBehaviour
             if (_hit.transform.CompareTag("Monitor"))
             {
                 MonitorInteract();
+            }
+
+            if (_hit.transform.CompareTag("Switch"))
+            {
+                SwitchInteract();
             }
 
 
@@ -151,6 +157,16 @@ public class PlayerRay : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E) && GameManager.Instance.IsPaused == false) 
         {
             _monitor.Interaction();
+        }
+    }
+
+    private void SwitchInteract()
+    {
+        _switch = _hit.transform.GetComponent<SwitchInteraction>();
+        UIManager.Instance.DrawInteractText(_switch._activeText);
+        if (Input.GetKeyDown(KeyCode.E) && GameManager.Instance.IsPaused == false)
+        {
+            _switch.Interaction();
         }
     }
 }
