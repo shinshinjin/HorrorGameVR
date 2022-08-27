@@ -260,7 +260,6 @@ GameObject:
   - component: {fileID: 1640738505935333458}
   - component: {fileID: 2407958429925353463}
   - component: {fileID: 472383347265065789}
-  - component: {fileID: 7277905304285714892}
   - component: {fileID: 2809627093496039773}
   m_Layer: 0
   m_Name: Hos_Room_Door
@@ -336,19 +335,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &7277905304285714892
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2129853352662856424}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 30.000008, y: 2100, z: 900.00024}
-  m_Center: {x: 14.999027, y: 1050, z: 450.00012}
 --- !u!65 &2809627093496039773
 BoxCollider:
   m_ObjectHideFlags: 0
