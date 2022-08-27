@@ -21,6 +21,9 @@ TagManager:
   - Coffer
   - CCTV
   - NumberCoffer
+  - Switch
+  - TempSwitch
+  - PlateFrame
   layers:
   - Default
   - TransparentFX

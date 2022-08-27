@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ButtonInteraction : MonoBehaviour
+public class ButtonInteraction : MonoBehaviour, IInteraction
 {
     public GameObject[] _gameObject;
 

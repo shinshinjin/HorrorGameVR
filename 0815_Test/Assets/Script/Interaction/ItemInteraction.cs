@@ -112,6 +112,11 @@ public class ItemInteraction : MonoBehaviour , IInteraction
         {
             ItemManager.Instance.IsHaveHospitalKey = true;
         }
+
+        if (ItemName == "누군가의 이름표")
+        {
+            ItemManager.Instance.IsHaveNamePlate = true;
+        }
     }
     private void BreakItem()
     {
