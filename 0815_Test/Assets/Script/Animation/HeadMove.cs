@@ -20,7 +20,6 @@ public class HeadMove : MonoBehaviour
                 _elapsedTime = 0f;
                 isDoctorSeeThat = true;
             }
-
         }
 
         else
@@ -32,7 +31,6 @@ public class HeadMove : MonoBehaviour
                 _elapsedTime = 0f;
                 isDoctorSeeThat = false;
             }
-
         }
 
     }
