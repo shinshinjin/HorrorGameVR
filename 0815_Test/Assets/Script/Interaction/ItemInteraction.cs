@@ -117,6 +117,11 @@ public class ItemInteraction : MonoBehaviour , IInteraction
         {
             ItemManager.Instance.IsHaveNamePlate = true;
         }
+
+        if (ItemName == "º´¿ø ¹® ¿­¼è")
+        {
+            ItemManager.Instance.IsHaveMainKey = true;
+        }
     }
     private void BreakItem()
     {
