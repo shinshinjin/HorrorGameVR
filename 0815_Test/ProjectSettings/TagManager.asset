@@ -25,6 +25,7 @@ TagManager:
   - TempSwitch
   - PlateFrame
   - SecretDoor
+  - Vent
   layers:
   - Default
   - TransparentFX

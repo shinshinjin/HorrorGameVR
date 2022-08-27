@@ -5,8 +5,6 @@ using UnityEngine.UI;
 
 public class Inventory : MonoBehaviour
 {
-
-    
     private int _slotCount = 0;
     [SerializeField]
     private Slot[] Slots;
