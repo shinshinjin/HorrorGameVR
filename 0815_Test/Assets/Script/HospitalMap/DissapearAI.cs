@@ -9,7 +9,7 @@ public class DissapearAI : MonoBehaviour
        if(other.tag == "Doctor")
         {
             other.gameObject.SetActive(false);
+            gameObject.SetActive(false);
         }
-        gameObject.SetActive(false);
     }
 }

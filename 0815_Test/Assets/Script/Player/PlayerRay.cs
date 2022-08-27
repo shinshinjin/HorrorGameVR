@@ -19,6 +19,8 @@ public class PlayerRay : MonoBehaviour
     private ButtonInteraction _tempSwitch;
     private VentInteraction _vent;
     private GarbageDumpInteraction _garbage;
+    private NamePlateInteraction _nameplate;
+    private LockScrectDoorInteraction _secretdoor;
     private RaycastHit _hit;
     private float _distance = 6f;
 
@@ -91,6 +93,16 @@ public class PlayerRay : MonoBehaviour
             if (_hit.transform.CompareTag("TempSwitch"))
             {
                 TempSwitchInteract();
+            }
+
+            if (_hit.transform.CompareTag("PlateFrame"))
+            {
+                NamePlateInteract();
+            }
+
+            if (_hit.transform.CompareTag("SecretDoor"))
+            {
+                ScrectDoorInteract();
             }
         }
         
@@ -241,6 +253,28 @@ public class PlayerRay : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E) && GameManager.Instance.IsPaused == false)
         {
             _tempSwitch.Interaction();
+        }
+    }
+
+    private void NamePlateInteract()
+    {
+        _nameplate = _hit.transform.GetComponent<NamePlateInteraction>();
+        UIManager.Instance.DrawInteractText(_nameplate._activeText);
+        if (Input.GetKeyDown(KeyCode.E) && GameManager.Instance.IsPaused == false)
+        {
+            _nameplate.Interaction();
+        }
+    }
+
+    private void ScrectDoorInteract()
+    {
+        _secretdoor = _hit.transform.GetComponent<LockScrectDoorInteraction>();
+        UIManager.Instance.DrawInteractText(_secretdoor.ActiveText);
+        Debug.Assert(_secretdoor != null);
+
+        if (Input.GetKeyDown(KeyCode.E) && _secretdoor.IsMoveDoor == false && GameManager.Instance.IsPaused == false)
+        {
+            _secretdoor.Interaction();
         }
     }
 }

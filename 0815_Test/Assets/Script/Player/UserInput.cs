@@ -6,6 +6,7 @@ using UnityEngine.Events;
 public class UserInput : MonoBehaviour
 {
     public UnityEvent InventoryOn;
+    public UnityEvent PauseOn;
     public float InputX;
     public float InputY;
 
@@ -14,6 +15,8 @@ public class UserInput : MonoBehaviour
     [SerializeField]
     public bool IsLightOn;
     public bool IsInventoryOn;
+
+    public bool IsPauseOn;
 
     private AudioSource _handLightSound;
     public AudioClip HandLightSound;
@@ -48,6 +51,12 @@ public class UserInput : MonoBehaviour
                 StartCoroutine(UIManager.Instance.DrawDialogueText("인벤토리가 켜졌습니다"));
             else
                 UIManager.Instance.UnVisibleDialogueText();
+        }
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            IsPauseOn = !IsPauseOn;
+            PauseOn.Invoke();
         }
     }
 }

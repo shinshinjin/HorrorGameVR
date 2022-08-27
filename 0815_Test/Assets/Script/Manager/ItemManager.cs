@@ -41,6 +41,10 @@ public class ItemManager : MonoBehaviour
     public bool AlreadyHaveTherapyRoomKey { get; set; }
     public bool IsHaveHospitalKey { get; set; }
     public bool AlreadyHaveHospitalKey { get; set; }
+    public bool IsHaveNamePlate { get; set; }
+    public bool AlreadyHaveNamePlate { get; set; }
+    public bool IsHaveMainKey { get; set; }
+    public bool AlreadyHaveMainKey { get; set; }
     #endregion
 
     public ItemData[] itemDatas;

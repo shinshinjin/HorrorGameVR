@@ -5,8 +5,6 @@ using UnityEngine.UI;
 
 public class Inventory : MonoBehaviour
 {
-
-    
     private int _slotCount = 0;
     [SerializeField]
     private Slot[] Slots;
@@ -184,6 +182,14 @@ public class Inventory : MonoBehaviour
             Slots[_slotCount].ItemImage = ItemManager.Instance.itemDatas[16].ItemImage;
             Slots[_slotCount]._isItemIn = true;
             ItemManager.Instance.AlreadyHaveHospitalKey = true;
+        }
+
+        if (ItemManager.Instance.IsHaveNamePlate && ItemManager.Instance.AlreadyHaveNamePlate == false)
+        {
+            Slots[_slotCount].ItemName = ItemManager.Instance.itemDatas[17].ItemName;
+            Slots[_slotCount].ItemImage = ItemManager.Instance.itemDatas[17].ItemImage;
+            Slots[_slotCount]._isItemIn = true;
+            ItemManager.Instance.AlreadyHaveNamePlate = true;
         }
     }
 }

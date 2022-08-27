@@ -120,7 +120,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 115438
+  controlID: 17
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -145,7 +145,7 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 200}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
-  controlID: 115366
+  controlID: 83
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -222,7 +222,7 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 200}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
-  controlID: 115390
+  controlID: 24
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -299,7 +299,7 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 200}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
-  controlID: 115439
+  controlID: 18
 --- !u!114 &13
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -319,8 +319,8 @@ MonoBehaviour:
     y: 0
     width: 375
     height: 630
-  m_MinSize: {x: 275, y: 50}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 276, y: 71}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 19}
   m_Panes:
   - {fileID: 19}
@@ -412,7 +412,7 @@ MonoBehaviour:
     m_VAllowExceedBaseRangeMax: 1
     m_ScaleWithWindow: 0
     m_HSlider: 0
-    m_VSlider: 0
+    m_VSlider: 1
     m_IgnoreScrollWheelUntilClicked: 0
     m_EnableMouseInput: 1
     m_EnableSliderZoomHorizontal: 0
@@ -425,7 +425,7 @@ MonoBehaviour:
       y: 21
       width: 1199
       height: 519
-    m_Scale: {x: 0.48055556, y: 0.48055556}
+    m_Scale: {x: 0.5, y: 0.5}
     m_Translation: {x: 599.5, y: 259.5}
     m_MarginLeft: 0
     m_MarginRight: 0
@@ -433,12 +433,12 @@ MonoBehaviour:
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
-      x: -1247.5144
-      y: -540
-      width: 2495.0288
-      height: 1080
+      x: -1199
+      y: -519
+      width: 2398
+      height: 1038
     m_MinimalGUI: 1
-  m_defaultScale: 0.48055556
+  m_defaultScale: 0.5
   m_LastWindowPixelSize: {x: 1199, y: 540}
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
@@ -721,7 +721,7 @@ MonoBehaviour:
   m_Rotation:
     m_Target: {x: -0.083848946, y: -0.16006553, z: -0.024381597, w: 0.98496145}
     speed: 2
-    m_Value: {x: -0.08370697, y: -0.15979451, z: -0.024340313, w: 0.98329365}
+    m_Value: {x: 0.08384894, y: 0.16006552, z: 0.024381597, w: -0.9849614}
   m_Size:
     m_Target: 2.3878489
     speed: 2
@@ -781,9 +781,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 3e1e0300
+      m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 52f9efffa8f9efff84d2f0ff90d2f0ffe614f1ff7c17f1fffe17f1ff0218f1ff0418f1ff2288f1ff3688f1ff4a88f1ff5e88f1ff6288f1ff7688f1ff8a88f1ff9e88f1ffb288f1ffc688f1ffca88f1ffa689f1ffa28af1ffb68af1ffca8af1ffde8af1ffe28af1ff2a8bf1ff468bf1ff9a8ff1ffae8ff1ffc28ff1ffd68ff1ffea8ff1fffe8ff1ff1290f1ff2690f1ff3a90f1ff4e90f1ff8a90f1ff9e90f1ffb290f1ffc690f1ffda90f1ffde90f1ff86a2f1ff8aa2f1ff84bbf1ff1abcf1ff30acf2ffd2bef2ff1278fbff1678fbff1e78fbff2278fbff4c78fbff1c7bfbffb87cfbff1ca7fbffb2a7fbff2e1cfdffb49afdffb229ffffbe29ffffd029ffffb251ffffbe51ffffce51ffffda51ffffee98fffffe98ffff0e99ffff929affffea9afffff09afffffebeffff06fbffff08fbffff3c5e00006c6100004e6200009e620000466300004c69000072690000be690000c6690000b86a0000526d00000e7000005273000006760000b21a7100dc257100042671004c267100e429710094327100e64071009c547100
+      m_ExpandedIDs: d0f8feffe0f9feff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -848,36 +848,36 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Prefab/Item_Prefabs
+    - Assets/Script/Animation
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets/Prefab/Item_Prefabs
+  - Assets/Script/Animation
   m_LastFoldersGridSize: 16
-  m_LastProjectPath: C:\Metaverse_JH\HorrorGameVR\0815_Test
+  m_LastProjectPath: D:\Unity\Unity_Project\HorrorGameVR\0815_Test
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 37}
-    m_SelectedIDs: 3e1e0300
-    m_LastClickedID: 204350
-    m_ExpandedIDs: 000000009ef40000a0f40000faf4000000ca9a3b
+    scrollPos: {x: 0, y: 120}
+    m_SelectedIDs: 02470100
+    m_LastClickedID: 83714
+    m_ExpandedIDs: 00000000c2450100da45010000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: 
-      m_OriginalName: 
+      m_Name: Script
+      m_OriginalName: Script
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 0
+      m_UserData: 83418
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 11
+      m_OriginalEventType: 0
       m_IsRenamingFilename: 1
       m_ClientGUIView: {fileID: 11}
     m_SearchString: 
@@ -891,7 +891,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000009ef40000faf4000000ca9a3b
+    m_ExpandedIDs: 
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -918,22 +918,22 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 1
+    m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: 00000000aa720000d87200001e770000427f0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: GarbageDumpInteraction
-      m_OriginalName: GarbageDumpInteraction
+      m_Name: 
+      m_OriginalName: 
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 7849922
+      m_UserData: 0
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 0
+      m_OriginalEventType: 11
       m_IsRenamingFilename: 1
       m_ClientGUIView: {fileID: 11}
     m_CreateAssetUtility:
@@ -943,7 +943,7 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
     m_NewAssetIndexInList: -1
-    m_ScrollPosition: {x: 0, y: 88}
+    m_ScrollPosition: {x: 0, y: 0}
     m_GridSize: 16
   m_SkipHiddenPackages: 0
   m_DirectoriesAreaWidth: 156

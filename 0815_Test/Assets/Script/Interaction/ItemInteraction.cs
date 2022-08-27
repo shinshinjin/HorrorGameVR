@@ -93,7 +93,7 @@ public class ItemInteraction : MonoBehaviour , IInteraction
             ItemManager.Instance.IsHaveLightSwitch = true;
         }
 
-        if (ItemName == "누군가의 뇌") 
+        if (ItemName == "그녀의 뇌") 
         {
             ItemManager.Instance.IsHaveBrain = true;
         }
@@ -108,9 +108,14 @@ public class ItemInteraction : MonoBehaviour , IInteraction
             ItemManager.Instance.IsHaveTherapyRoomKey = true;
         }
 
-        if (ItemName == "병원 문 열쇠") 
+        if (ItemName == "누군가의 이름표")
         {
-            ItemManager.Instance.IsHaveHospitalKey = true;
+            ItemManager.Instance.IsHaveNamePlate = true;
+        }
+
+        if (ItemName == "병원 문 열쇠")
+        {
+            ItemManager.Instance.IsHaveMainKey = true;
         }
     }
     private void BreakItem()

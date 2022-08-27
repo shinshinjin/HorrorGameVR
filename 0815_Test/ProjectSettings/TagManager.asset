@@ -21,6 +21,11 @@ TagManager:
   - Coffer
   - CCTV
   - NumberCoffer
+  - Switch
+  - TempSwitch
+  - PlateFrame
+  - SecretDoor
+  - Vent
   layers:
   - Default
   - TransparentFX

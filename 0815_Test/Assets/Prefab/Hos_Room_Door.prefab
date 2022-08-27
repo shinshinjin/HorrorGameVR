@@ -260,7 +260,7 @@ GameObject:
   - component: {fileID: 1640738505935333458}
   - component: {fileID: 2407958429925353463}
   - component: {fileID: 472383347265065789}
-  - component: {fileID: 7277905304285714892}
+  - component: {fileID: 2809627093496039773}
   m_Layer: 0
   m_Name: Hos_Room_Door
   m_TagString: Untagged
@@ -277,7 +277,7 @@ Transform:
   m_GameObject: {fileID: 2129853352662856424}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -851.9434, y: -17.507574, z: -60.41696}
-  m_LocalScale: {x: 0.005, y: 0.005, z: 0.005}
+  m_LocalScale: {x: 0.0049999994, y: 0.005, z: 0.0049999994}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7302643057508854036}
@@ -313,8 +313,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 5384864417625673435, guid: 276e3109d4507f54f81f6f9d8960b866, type: 3}
-  - {fileID: 7109231596476768308, guid: 276e3109d4507f54f81f6f9d8960b866, type: 3}
+  - {fileID: 2100000, guid: d1fe885a4035715469b2bdcbf497c156, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -336,7 +335,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &7277905304285714892
+--- !u!65 &2809627093496039773
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -347,8 +346,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 30.000008, y: 2100, z: 900.00024}
-  m_Center: {x: 14.999027, y: 1050, z: 450.00012}
+  m_Size: {x: 29.999998, y: 2100, z: 899.99994}
+  m_Center: {x: 15.009765, y: 1050, z: 450.00095}
 --- !u!1 &2133052019844690789
 GameObject:
   m_ObjectHideFlags: 0
