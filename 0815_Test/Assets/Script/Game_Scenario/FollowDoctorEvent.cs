@@ -7,6 +7,7 @@ public class FollowDoctorEvent : MonoBehaviour
     public Transform Player;
     public Transform[] Points;
 
+    public GameObject Sight;
     public GameObject Doctor;
 
     private Transform Target;
@@ -24,6 +25,7 @@ public class FollowDoctorEvent : MonoBehaviour
     }
     public void SpawnDoctor()
     {
+        Sight.SetActive(true);
         Points[0].gameObject.SetActive(true);
         Doctor.SetActive(true);
     }

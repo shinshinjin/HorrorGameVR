@@ -17,7 +17,7 @@ public class PlayerLight : MonoBehaviour
     {
         if(_input.IsLightOn)
         {
-            _light.range = 35f;
+            _light.range = 40f;
         }
         else
         {

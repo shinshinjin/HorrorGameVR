@@ -30,6 +30,7 @@ public class GYMainDoorEvent : MonoBehaviour
             UIManager.Instance.DrawAndEraseDialogueTextForSeconds("어.. 어라? 왜 문이 멋대로..", 2f);
             UIManager.Instance.GuideText.text = "집으로 갈 방법을 찾자";
             Class10Door.tag = "Door";
+            Camera.main.cullingMask = -1;
         }
     }
 }

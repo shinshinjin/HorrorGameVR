@@ -50,6 +50,7 @@ public class PRNumberCofferSystem : MonoBehaviour
             Coffers[0].SetActive(true);
             Coffers[1].SetActive(false);
             Coffer._isActive = false;
+            CofferOff();
         }
         else
         {

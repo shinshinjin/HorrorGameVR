@@ -40,6 +40,7 @@ public class VentInteraction : MonoBehaviour, IInteraction
         {
             Debug.Log("병원 출발");
             Player.position = Target.position;
+            GameManager.Instance.OffGYMap();
             gameObject.SetActive(false);
         }
 

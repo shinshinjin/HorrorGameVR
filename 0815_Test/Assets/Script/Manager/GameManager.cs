@@ -7,6 +7,8 @@ public class GameManager : MonoBehaviour
     private static GameManager _instance;
 
     public Transform Player;
+    public GameObject GYMap;
+    public GameObject HospitalMap;
 
     public bool IsMouseLocked = true;
 
@@ -23,6 +25,7 @@ public class GameManager : MonoBehaviour
     public bool IsUseItemTutorialOver;
 
     public bool IsInFan;
+
     public static GameManager Instance
     {
         get
@@ -44,4 +47,10 @@ public class GameManager : MonoBehaviour
     {
         AudioSource.PlayClipAtPoint(clip, Player.position);
     }
+
+    public void OffGYMap()
+    {
+        GYMap.SetActive(false);
+    }
+
 }
