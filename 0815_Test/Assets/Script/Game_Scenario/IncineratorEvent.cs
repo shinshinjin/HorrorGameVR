@@ -9,6 +9,7 @@ public class IncineratorEvent : MonoBehaviour, IInteraction
     public AudioClip BrainIn;
     public AudioClip Fire;
     public GameObject StorageKey;
+    public GameObject _HerCrying;
 
     public string ActiveText;
 
@@ -54,6 +55,7 @@ public class IncineratorEvent : MonoBehaviour, IInteraction
             StorageKey.SetActive(true);
             BurningBrain.Invoke();
             UIManager.Instance.GuideText.text = "병원 탈출하기";
+            _HerCrying.gameObject.SetActive(false);
         }
     }
 }
