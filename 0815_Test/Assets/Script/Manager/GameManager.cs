@@ -23,6 +23,7 @@ public class GameManager : MonoBehaviour
     public bool IsUseItemTutorialOver;
 
     public bool IsInFan;
+
     public static GameManager Instance
     {
         get
