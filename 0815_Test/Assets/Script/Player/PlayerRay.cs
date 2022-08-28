@@ -21,6 +21,7 @@ public class PlayerRay : MonoBehaviour
     private GarbageDumpInteraction _garbage;
     private NamePlateInteraction _nameplate;
     private LockScrectDoorInteraction _secretdoor;
+    private IncineratorEvent _incinerator;
     private RaycastHit _hit;
     private float _distance = 6f;
 
@@ -109,6 +110,12 @@ public class PlayerRay : MonoBehaviour
             {
                 VentInteract();
             }
+
+            if (_hit.transform.CompareTag("Incinerator"))
+            {
+                IncineratorInteract();
+            }
+            
         }
         
     }
@@ -251,15 +258,6 @@ public class PlayerRay : MonoBehaviour
             _vent.Interaction();
         }
     }
-    private void GarbageDumpInteract()
-    {
-        _garbage = _hit.transform.GetComponent<GarbageDumpInteraction>();
-        UIManager.Instance.DrawInteractText(_garbage._activeText);
-        if (Input.GetKeyDown(KeyCode.E) && GameManager.Instance.IsPaused == false)
-        {
-            _tempSwitch.Interaction();
-        }
-    }
 
     private void NamePlateInteract()
     {
@@ -280,6 +278,17 @@ public class PlayerRay : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E) && _secretdoor.IsMoveDoor == false && GameManager.Instance.IsPaused == false)
         {
             _secretdoor.Interaction();
+        }
+    }
+
+    private void IncineratorInteract()
+    {
+        _incinerator = _hit.transform.GetComponent<IncineratorEvent>();
+        UIManager.Instance.DrawInteractText(_incinerator.ActiveText);
+
+        if (Input.GetKeyDown(KeyCode.E) && GameManager.Instance.IsPaused == false)
+        {
+            _incinerator.Interaction();
         }
     }
 }

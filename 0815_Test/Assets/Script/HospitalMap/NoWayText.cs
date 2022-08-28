@@ -30,7 +30,5 @@ public class NoWayText : MonoBehaviour
     {
         OnlyOneTime = false;
         UIManager.Instance.EraseDialogueText();
-    }   
-
-
+    }
 }

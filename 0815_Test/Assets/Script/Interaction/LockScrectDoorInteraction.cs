@@ -14,8 +14,6 @@ public class LockScrectDoorInteraction : MonoBehaviour
 
     private float _moveSpeed = 1.25f;
 
-
-
     private void Awake()
     {
         ActiveText = "¿­±â (E)";
