@@ -29,7 +29,7 @@ public class NoWayText : MonoBehaviour
     private void OnTriggerExit()
     {
         OnlyOneTime = false;
-        UIManager.Instance.UnVisibleDialogueText();
+        UIManager.Instance.EraseDialogueText();
     }   
 
 

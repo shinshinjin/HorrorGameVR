@@ -12,7 +12,7 @@ public class GuideTextSetterBool : MonoBehaviour
         if(GuideTextStart)
         {
             UIManager.Instance.GuideText.text = GuideText;
-            gameObject.SetActive(false);
+            //gameObject.SetActive(false);
         }
     }
 }

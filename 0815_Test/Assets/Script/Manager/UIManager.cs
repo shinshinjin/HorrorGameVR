@@ -76,7 +76,18 @@ public class UIManager : MonoBehaviour
         GuideText.text = "";
     }
 
-    public void UnVisibleDialogueText()
+    public IEnumerator EraseDialogueTextSeconds(float second)
+    {
+        if(DialogueUI.activeInHierarchy == false)
+        {
+            StopCoroutine(EraseDialogueTextSeconds(second));
+        }
+        yield return new WaitForSeconds(second);
+        DialogueUI.SetActive(false);
+        
+    }
+
+    public void EraseDialogueText()
     {
         DialogueUI.SetActive(false);
     }

@@ -47,10 +47,10 @@ public class UserInput : MonoBehaviour
         {
             IsInventoryOn = !IsInventoryOn;
             InventoryOn.Invoke();
-            if (IsInventoryOn)
-                StartCoroutine(UIManager.Instance.DrawDialogueText("인벤토리가 켜졌습니다"));
-            else
-                UIManager.Instance.UnVisibleDialogueText();
+            //if (IsInventoryOn)
+            //    StartCoroutine(UIManager.Instance.DrawDialogueText("인벤토리가 켜졌습니다"));
+            //else
+            //    UIManager.Instance.UnVisibleDialogueText();
         }
 
         if (Input.GetKeyDown(KeyCode.Escape))

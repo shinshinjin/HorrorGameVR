@@ -104,6 +104,11 @@ public class PlayerRay : MonoBehaviour
             {
                 ScrectDoorInteract();
             }
+
+            if (_hit.transform.CompareTag("Vent"))
+            {
+                VentInteract();
+            }
         }
         
     }
