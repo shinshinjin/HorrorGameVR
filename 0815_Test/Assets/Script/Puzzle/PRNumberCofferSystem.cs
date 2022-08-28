@@ -17,7 +17,7 @@ public class PRNumberCofferSystem : MonoBehaviour
 
     public void CofferOff()
     {
-        UIManager.Instance.UnVisibleDialogueText();
+        UIManager.Instance.EraseDialogueText();
         GameManager.Instance.IsMouseLocked = true;
         GameManager.Instance.IsPaused = false;
         CofferImage.SetActive(false);
@@ -50,6 +50,7 @@ public class PRNumberCofferSystem : MonoBehaviour
             Coffers[0].SetActive(true);
             Coffers[1].SetActive(false);
             Coffer._isActive = false;
+            CofferOff();
         }
         else
         {

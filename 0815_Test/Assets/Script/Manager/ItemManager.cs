@@ -43,8 +43,6 @@ public class ItemManager : MonoBehaviour
     public bool AlreadyHaveHospitalKey { get; set; }
     public bool IsHaveNamePlate { get; set; }
     public bool AlreadyHaveNamePlate { get; set; }
-    public bool IsHaveMainKey { get; set; }
-    public bool AlreadyHaveMainKey { get; set; }
     #endregion
 
     public ItemData[] itemDatas;
@@ -90,5 +88,6 @@ public class ItemManager : MonoBehaviour
         CurrentSlot.ItemImage = DefaultSlotImage;
         CurrentSlot._isItemIn = false;
         UIManager.Instance.SelectedItemTextWithInventory.text = "";
+        UIManager.Instance.SelectedItemText.text = "";
     }
 }

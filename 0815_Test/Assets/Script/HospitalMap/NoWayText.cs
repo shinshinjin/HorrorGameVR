@@ -10,7 +10,7 @@ public class NoWayText : MonoBehaviour
     public UnityEvent InteractSwitch;
     private bool OnlyOneTime;
 
-    private void OnTriggerEnter()
+    private void OnTriggerEnter(Collider other)
     {
         if(OnlyOneTime == false)
         {
@@ -21,16 +21,14 @@ public class NoWayText : MonoBehaviour
         
     }
 
-    private void OnTriggerStay()
+    private void OnTriggerStay(Collider other)
     {
         _NowayText = "";
     }
 
-    private void OnTriggerExit()
+    private void OnTriggerExit(Collider other)
     {
         OnlyOneTime = false;
-        UIManager.Instance.UnVisibleDialogueText();
-    }   
-
-
+        UIManager.Instance.EraseDialogueText();
+    }
 }

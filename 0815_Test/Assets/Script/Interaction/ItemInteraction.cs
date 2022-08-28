@@ -115,7 +115,7 @@ public class ItemInteraction : MonoBehaviour , IInteraction
 
         if (ItemName == "º´¿ø ¹® ¿­¼è")
         {
-            ItemManager.Instance.IsHaveMainKey = true;
+            ItemManager.Instance.IsHaveHospitalKey = true;
         }
     }
     private void BreakItem()

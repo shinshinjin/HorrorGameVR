@@ -6,13 +6,13 @@ public class PR_Screen_Change : MonoBehaviour
 {
     public CCTVInteraction CCTVInteraction;
     public Material CCTV;
-    private MeshRenderer _render;
+    public MeshRenderer _render;
 
 
-    private void Awake()
-    {
-        _render = GetComponent<MeshRenderer>();
-    }
+    //private void Awake()
+    //{
+    //    _render = GetComponent<MeshRenderer>();
+    //}
 
     public void ScreenChange()
     {

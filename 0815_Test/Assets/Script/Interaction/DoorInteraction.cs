@@ -52,7 +52,7 @@ public class DoorInteraction : MonoBehaviour , IInteraction
         }
         yield return null;
     }
-    IEnumerator Open()
+    public IEnumerator Open()
     {
         while (true)
         {

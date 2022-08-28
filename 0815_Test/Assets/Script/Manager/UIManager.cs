@@ -16,7 +16,7 @@ public class UIManager : MonoBehaviour
     public Text GuideText;
     public Text SelectedItemTextWithInventory;
 
-    private float _drawOneWordTime = 0.05f;
+    private float _drawOneWordTime = 0.02f;
     
     public static UIManager Instance
     {
@@ -75,8 +75,29 @@ public class UIManager : MonoBehaviour
     {
         GuideText.text = "";
     }
+    /// <summary>
+    /// 대사 띄우기와 N초후에 지우기 합쳐놓은 함수
+    /// </summary>
+    /// <param name="dialogue">대사</param>
+    /// <param name="seconds">이 시간 후에 대사 지움</param>
+    public void DrawAndEraseDialogueTextForSeconds(string dialogue, float seconds)
+    {
+        StartCoroutine(DrawDialogueText(dialogue));
+        StartCoroutine(EraseDialogueTextSeconds(seconds));
+    }
 
-    public void UnVisibleDialogueText()
+    public IEnumerator EraseDialogueTextSeconds(float seconds)
+    {
+        if(DialogueUI.activeInHierarchy == false)
+        {
+            StopCoroutine(EraseDialogueTextSeconds(seconds));
+        }
+        yield return new WaitForSeconds(seconds);
+        DialogueUI.SetActive(false);
+        
+    }
+
+    public void EraseDialogueText()
     {
         DialogueUI.SetActive(false);
     }
