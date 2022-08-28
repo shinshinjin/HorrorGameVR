@@ -77,7 +77,6 @@ public class PlayerMove : MonoBehaviour
         _moveVector.Normalize();
 
         _rigidbody.MovePosition(transform.position + _moveVector * _speed * Time.fixedDeltaTime);
-        //transform.position += _moveVector * _speed * Time.fixedDeltaTime;
     }
     private void Run()
     {
@@ -89,11 +88,11 @@ public class PlayerMove : MonoBehaviour
 
         if(_isRunning)
         {
-            _speed = 12f;
+            _speed = 5.5f;
         }
         else
         {
-            _speed = 6f;
+            _speed = 5.5f;
         }
     }
 

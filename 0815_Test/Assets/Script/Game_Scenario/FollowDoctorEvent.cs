@@ -10,6 +10,8 @@ public class FollowDoctorEvent : MonoBehaviour
     public GameObject Sight;
     public GameObject Doctor;
 
+    public Transform DoctorSpawnPosition;
+
     private Transform Target;
 
     private int _pointIndex;
@@ -30,6 +32,12 @@ public class FollowDoctorEvent : MonoBehaviour
         Doctor.SetActive(true);
     }
     
+    public void InitDoctor()
+    {
+        Doctor.transform.position = DoctorSpawnPosition.position;
+        Sight.SetActive(false);
+        Doctor.SetActive(false);
+    }
 
     public void PointChanger(int currentPointIndex)
     {
@@ -51,6 +59,5 @@ public class FollowDoctorEvent : MonoBehaviour
     {
         Points[_pointIndex].gameObject.SetActive(false);
         Target = Player.transform;
-        
     }
 }

@@ -25,7 +25,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: -1
+  controlID: 68346
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -142,7 +142,7 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 200}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
-  controlID: -1
+  controlID: 68347
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -395,9 +395,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 26.559875, y: 7.45094, z: -38.46}
+    m_Target: {x: 177.03525, y: 18.859009, z: 23.237242}
     speed: 2
-    m_Value: {x: 26.559875, y: 7.45094, z: -38.46}
+    m_Value: {x: 177.03525, y: 18.859009, z: 23.237242}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -444,13 +444,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.0848005, y: -0.8708295, z: -0.15304779, w: -0.4602768}
+    m_Target: {x: -0.062693834, y: -0.5508042, z: 0.046019915, w: -0.8315119}
     speed: 2
-    m_Value: {x: 0.08476603, y: -0.8704756, z: -0.15298557, w: -0.46008974}
+    m_Value: {x: -0.06273628, y: -0.5493241, z: 0.045906417, w: -0.83198553}
   m_Size:
-    m_Target: 10
+    m_Target: 4.108445
     speed: 2
-    m_Value: 10
+    m_Value: 4.108445
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -613,7 +613,7 @@ MonoBehaviour:
     m_SaveData: []
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: 8043284
+  m_LastSelectedObjectID: 10581336
 --- !u!114 &9
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -638,7 +638,7 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 200}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
-  controlID: 47002
+  controlID: 68432
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -658,8 +658,8 @@ MonoBehaviour:
     y: 0
     width: 319
     height: 535
-  m_MinSize: {x: 202, y: 221}
-  m_MaxSize: {x: 4002, y: 4021}
+  m_MinSize: {x: 201, y: 221}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 11}
   m_Panes:
   - {fileID: 11}
@@ -695,24 +695,24 @@ MonoBehaviour:
     m_SaveData: []
   m_SceneHierarchy:
     m_TreeViewState:
-      scrollPos: {x: 0, y: 1255}
-      m_SelectedIDs: 6acf7a00
-      m_LastClickedID: 8048490
-      m_ExpandedIDs: bc3ff9ff1040f9ff2a04faff2e04faff5a0bfaffae0bfaffe2d0faffeed0faff2a80fbffb840ffffba40ffff645dfffffa5fffff1260ffff1660ffff7c60ffff8060ffff36fbffff9c5b0000ea610000866200004c650000006b000094740000ea76000086770000ee860000d092000012960000aa9800008c7b7700c2007a00dc027a003a057a00f2067a00160a7a00a80d7a009c157a00301c7a0084257a00b4267a003c2d7a0006327a0002357a003a357a0098397a00ae3a7a000c3d7a0006457a00fa457a0056467a0066487a0014497a000a4a7a000e4c7a0040587a00a4597a00985e7a00fc647a006e677a00c06c7a00c6777a00ca797a00e47d7a00c8887a0008897a00ce947a0056a07a0034a77a009aa97a00e8a97a00eca97a001aae7a00f2b47a00e2bb7a003ac97a0002ce7a00f4d37a0060e07a00bcf77a00
+      scrollPos: {x: 0, y: 0}
+      m_SelectedIDs: 5875a100
+      m_LastClickedID: 10581336
+      m_ExpandedIDs: 6cbbf6ff727df7ff4a7ef7ff8a84f7ffbc3ff9ff1040f9ff2a04faff2e04faff5a0bfaffae0bfaffe2d0faffeed0faff2a80fbffb840ffffba40ffff645dfffffa5fffff1260ffff1660ffff7c60ffff8060ffff9c5b0000ea610000866200004c650000006b000094740000ea76000086770000ee860000d092000012960000aa9800008c7b770026007a00a4597a007c7e7a003aa17a00d8ba7a003ec17a0092f17a00baf17a00
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: GY_Screen_Puzzle
-        m_OriginalName: GY_Screen_Puzzle
+        m_Name: 
+        m_OriginalName: 
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: 8052832
+        m_UserData: 0
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
-        m_OriginalEventType: 0
+        m_OriginalEventType: 11
         m_IsRenamingFilename: 0
         m_ClientGUIView: {fileID: 10}
       m_SearchString: 
@@ -789,22 +789,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Prefab/Item_Prefabs/CCTV
+    - Assets/Scenes
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets/Prefab/Item_Prefabs/CCTV
+  - Assets/Scenes
   m_LastFoldersGridSize: 16
   m_LastProjectPath: C:\Develop_JH\HorrorGameVR\0815_Test
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 141}
-    m_SelectedIDs: 22697e00
-    m_LastClickedID: 8284450
-    m_ExpandedIDs: 000000007c0301007e030100800301008203010084030100860301002804010000ca9a3bffffff7f
+    scrollPos: {x: 0, y: 60}
+    m_SelectedIDs: 2e040100
+    m_LastClickedID: 66606
+    m_ExpandedIDs: 000000007c0301007e030100860301002804010000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -832,7 +832,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000007c0301007e0301008003010082030100840301008603010000ca9a3bffffff7f
+    m_ExpandedIDs: 000000007c0301007e030100860301002804010000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -857,9 +857,9 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 6acf7a00
-    m_LastClickedInstanceID: 8048490
-    m_HadKeyboardFocusLastEvent: 1
+    m_SelectedInstanceIDs: 5875a100
+    m_LastClickedInstanceID: 10581336
+    m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: 00000000aa720000d87200001e770000427f0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -912,7 +912,7 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 200}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
-  controlID: 46892
+  controlID: 68426
 --- !u!114 &15
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -975,7 +975,7 @@ MonoBehaviour:
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
   m_LastInspectedObjectInstanceID: -1
-  m_LastVerticalScrollValue: 386
+  m_LastVerticalScrollValue: 0
   m_GlobalObjectId: 
   m_InspectorMode: 0
   m_LockTracker:
