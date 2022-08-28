@@ -53,6 +53,7 @@ public class IncineratorEvent : MonoBehaviour, IInteraction
         {
             StorageKey.SetActive(true);
             BurningBrain.Invoke();
+            UIManager.Instance.GuideText.text = "병원 탈출하기";
         }
     }
 }

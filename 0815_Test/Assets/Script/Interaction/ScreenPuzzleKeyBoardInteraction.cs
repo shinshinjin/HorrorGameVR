@@ -11,10 +11,12 @@ public class ScreenPuzzleKeyBoardInteraction : MonoBehaviour, IInteraction
 
     public GameObject[] Screens;
 
+    private AudioSource _audioSource;
     private int _currentScreenIndex;
 
     private void Awake()
     {
+        _audioSource = GetComponent<AudioSource>();
         _currentScreenIndex = 0;
     }
     private void Update()
@@ -30,7 +32,8 @@ public class ScreenPuzzleKeyBoardInteraction : MonoBehaviour, IInteraction
     }
     public void Interaction()
     {
-        if(Beam._isBeamOn)
+        _audioSource.Play();
+        if (Beam._isBeamOn)
         {
             if (_screenIndex > 5)
             {
