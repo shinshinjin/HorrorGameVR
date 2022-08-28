@@ -10,6 +10,7 @@ public class BatteryDown : MonoBehaviour
     {
         if(other.tag == "Player")
         {
+            UIManager.Instance.DrawAndEraseDialogueTextForSeconds("배터리 방전으로 손전등이 꺼져버렸다...", 2f);
             _smartPhone.SetActive(false);
         }
     }

@@ -15,9 +15,4 @@ public class DoctorStepSound : MonoBehaviour
     {
         _walk.Play();
     }
-
-    public void AudioStop()
-    {
-        _walk.Stop();
-    }
 }

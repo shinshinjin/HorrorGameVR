@@ -27,6 +27,7 @@ TagManager:
   - SecretDoor
   - Vent
   - Incinerator
+  - FollowDoctor
   layers:
   - Default
   - TransparentFX
@@ -37,7 +38,7 @@ TagManager:
   - Item
   - BeamProject
   - CCTV
-  - 
+  - ScareGuideText
   - 
   - 
   - 

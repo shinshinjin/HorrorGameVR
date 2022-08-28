@@ -8,6 +8,7 @@ public class IncineratorEvent : MonoBehaviour, IInteraction
     public UnityEvent BurningBrain;
     public AudioClip BrainIn;
     public AudioClip Fire;
+    public GameObject StorageKey;
 
     public string ActiveText;
 
@@ -50,6 +51,7 @@ public class IncineratorEvent : MonoBehaviour, IInteraction
 
         if (ItemManager.Instance.CurrentItemName == "ถ๓ภฬลอ" && _isBrainIn)
         {
+            StorageKey.SetActive(true);
             BurningBrain.Invoke();
         }
     }
