@@ -22,7 +22,6 @@ public class BoxInteraction : MonoBehaviour, IInteraction
             UIManager.Instance.EraseInfoText();
             _gameObject[0].SetActive(true);
             _gameObject[1].SetActive(false);
-            Destroy(gameObject, 2f);
         }
 
         else
