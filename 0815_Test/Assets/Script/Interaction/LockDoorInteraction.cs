@@ -47,7 +47,8 @@ public class LockDoorInteraction : MonoBehaviour, IInteraction
     {
         if(ItemManager.Instance.CurrentItemName == UnlockItemName || _isUnLocked)
         {
-            ItemManager.Instance.UsedItem();
+            if(ItemManager.Instance.CurrentItemName == UnlockItemName)
+                ItemManager.Instance.UsedItem();
             _isUnLocked = true;
             _isMoveDoor = true;
             if (_isOpen)
