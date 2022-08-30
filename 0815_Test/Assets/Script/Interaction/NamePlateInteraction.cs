@@ -10,7 +10,7 @@ public class NamePlateInteraction : MonoBehaviour, IInteraction
 
     private void Awake()
     {
-        _activeText = "비어 있음";
+        _activeText = "이름표를 넣어야 할 것 같은 기분이 든다";
     }
 
     public void Interaction()
