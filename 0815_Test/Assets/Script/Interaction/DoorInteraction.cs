@@ -12,6 +12,7 @@ public class DoorInteraction : MonoBehaviour , IInteraction
     public bool IsOpen;
 
     private AudioSource _doorAudio;
+    private BoxCollider _boxCollider;
 
     private float _elapsedTime;
     private float _doorOpenCooltime = 1.4f;
@@ -23,6 +24,7 @@ public class DoorInteraction : MonoBehaviour , IInteraction
 
     private void Awake()
     {
+        _boxCollider = GetComponent<BoxCollider>();
         _doorAudio = GetComponent<AudioSource>();
         ActiveText = "문 열기 (E)";
     }
@@ -57,12 +59,13 @@ public class DoorInteraction : MonoBehaviour , IInteraction
         while (true)
         {
             transform.Rotate(0, _moveSpeed, 0);
-
+            _boxCollider.enabled = false;
             _elapsedTime += Time.fixedDeltaTime;
             if (_elapsedTime > _doorOpenCooltime)
             {
                 _elapsedTime = _initTime;
                 IsMoveDoor = false;
+                _boxCollider.enabled = true;
                 break;
             }
             Debug.Log("열리는 중");
