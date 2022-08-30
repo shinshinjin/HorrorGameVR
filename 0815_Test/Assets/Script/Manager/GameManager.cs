@@ -24,6 +24,7 @@ public class GameManager : MonoBehaviour
     public bool IsStartUseItemTutorial;
     public bool IsUseItemTutorialOver;
 
+    public bool IsPLClassPuzzleOver;
     public bool IsInFan;
 
     public static GameManager Instance
