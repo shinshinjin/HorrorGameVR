@@ -17,15 +17,15 @@ public class InventoryOnOff : MonoBehaviour
     public void InventoryOnOffFunc()
     {
         Inventory.SetActive(_input.IsInventoryOn);
-        if(_input.IsInventoryOn)
-        {
-            GameManager.Instance.IsMouseLocked = false;
-            GameManager.Instance.IsPaused = true;
-        }
-        else if(Coffer._isActive == false)
+        if (_input.IsPauseOn == false && _input.IsInventoryOn == false)
         {
             GameManager.Instance.IsMouseLocked = true;
             GameManager.Instance.IsPaused = false;
+        }
+        else
+        {
+            GameManager.Instance.IsMouseLocked = false;
+            GameManager.Instance.IsPaused = true;
         }
     }
 }
