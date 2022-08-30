@@ -10,6 +10,7 @@ public class EndGame : MonoBehaviour
         if(other.tag == "End")
         {
             SceneManager.LoadScene("TitleScene");
+            Cursor.lockState = CursorLockMode.None;
         }
     }
 }

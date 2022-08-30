@@ -12,7 +12,7 @@ public class NoWayText : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(OnlyOneTime == false)
+        if(OnlyOneTime == false && other.CompareTag("Player"))
         {
             _NowayText = "이곳은 어두워서 무서워... 다른길을 찾아보자.";
             StartCoroutine(UIManager.Instance.DrawDialogueText(_NowayText));
