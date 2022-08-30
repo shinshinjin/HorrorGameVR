@@ -11,8 +11,8 @@ public class PLMonitorPuzzle : MonoBehaviour
     [SerializeField]
     private MonitorInteraction[] Monitor;
 
-    private int[] _correctOnMonitorNumber = new int[17] { 0, 4, 9, 12, 14, 15, 13, 16, 17, 18, 19, 20, 22, 23, 21, 25, 28 };
-    private int[] _correctOffMonitorNumber = new int[15] { 1, 2, 3, 6, 7, 5, 8, 11, 10, 24, 27, 26, 30, 31, 29 };
+    private int[] _correctOnMonitorNumber = new int[18] { 0, 4, 9, 12, 14, 15, 13, 16, 17, 18, 19, 20, 24, 26, 27, 21, 25, 28 };
+    private int[] _correctOffMonitorNumber = new int[14] { 1, 2, 3, 6, 7, 5, 8, 11, 10, 22, 23, 30, 31, 29 };
 
     [SerializeField]
     private bool _PLClassPuzzleMonitorOnCorrect;
@@ -27,7 +27,7 @@ public class PLMonitorPuzzle : MonoBehaviour
     public void PLMonitorStatChange()
     {
         
-        for (int i = 0; i < 17; i++) 
+        for (int i = 0; i < _correctOnMonitorNumber.Length; i++) 
         {
             if (Monitor[_correctOnMonitorNumber[i]]._isScreenOn)
             {
@@ -40,7 +40,7 @@ public class PLMonitorPuzzle : MonoBehaviour
             }
         }
 
-        for (int i = 0; i < 15; i++)
+        for (int i = 0; i < _correctOffMonitorNumber.Length; i++)
         {
             if (Monitor[_correctOffMonitorNumber[i]]._isScreenOn == false)
             {
@@ -58,6 +58,7 @@ public class PLMonitorPuzzle : MonoBehaviour
             Debug.Log("ÆÛÁñ Àß ÀÛµ¿µÊ");
             GameManager.Instance.PlaySoundFromPlayer(DropKey);
             Class12Key.SetActive(true);
+            UIManager.Instance.DrawAndEraseDialogueTextForSeconds("¾Õ¿¡¼­ ¹«¾ð°¡ ¶³¾îÁö´Â ¼Ò¸®°¡ ³µ´Ù...", 2f);
         }
     }
 }
