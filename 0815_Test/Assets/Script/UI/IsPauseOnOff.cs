@@ -17,16 +17,15 @@ public class IsPauseOnOff : MonoBehaviour
     public void PauseOnOffFunc()
     {
         Pause.SetActive(_input.IsPauseOn);
-        if (_input.IsPauseOn)
-        {
-            GameManager.Instance.IsMouseLocked = false;
-            GameManager.Instance.IsPaused = true;
-        }
-
-        else
+        if (_input.IsPauseOn == false && _input.IsInventoryOn == false)
         {
             GameManager.Instance.IsMouseLocked = true;
             GameManager.Instance.IsPaused = false;
+        }
+        else
+        {
+            GameManager.Instance.IsMouseLocked = false;
+            GameManager.Instance.IsPaused = true;
         }
     }
 }
