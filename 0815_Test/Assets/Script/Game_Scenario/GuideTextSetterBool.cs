@@ -9,10 +9,6 @@ public class GuideTextSetterBool : MonoBehaviour
     public string GuideText;
     private void OnTriggerStay(Collider other)
     {
-        if(GuideTextStart)
-        {
-            UIManager.Instance.GuideText.text = GuideText;
-            //gameObject.SetActive(false);
-        }
+        
     }
 }

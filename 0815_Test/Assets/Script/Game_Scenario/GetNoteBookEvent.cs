@@ -18,9 +18,10 @@ public class GetNoteBookEvent : MonoBehaviour
         if(ItemManager.Instance.IsHaveNoteBook)
         {
             AllLightOff();
+            UIManager.Instance.GuideText.text = "집으로 돌아가자";
             _boxCollider.enabled = false;
-            if(MainDoor.IsOpen == false) { 
-            
+            if(MainDoor.IsOpen == false) 
+            {
                 MainDoor.IsOpen = true;
                 StartCoroutine(MainDoor.Open());
             }
