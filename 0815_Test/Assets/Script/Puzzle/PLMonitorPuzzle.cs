@@ -53,12 +53,13 @@ public class PLMonitorPuzzle : MonoBehaviour
             }
         }
 
-        if(_PLClassPuzzleMonitorOnCorrect && _PLClassPuzzleMonitorOffCorrect)
+        if(_PLClassPuzzleMonitorOnCorrect && _PLClassPuzzleMonitorOffCorrect && GameManager.Instance.IsPLClassPuzzleOver == false)
         {
             Debug.Log("퍼즐 잘 작동됨");
             GameManager.Instance.PlaySoundFromPlayer(DropKey);
             Class12Key.SetActive(true);
             UIManager.Instance.DrawAndEraseDialogueTextForSeconds("앞에서 무언가 떨어지는 소리가 났다...", 2f);
+            GameManager.Instance.IsPLClassPuzzleOver = true;
         }
     }
 }
