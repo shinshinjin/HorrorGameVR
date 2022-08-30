@@ -16,7 +16,7 @@ public class FollowDoctorSight : MonoBehaviour
         {
             IsFind = true;
             _move.Speed = 10f;
-            FindPlayer.Invoke();
+            FindPlayer.Invoke();    
         }
     }
 }

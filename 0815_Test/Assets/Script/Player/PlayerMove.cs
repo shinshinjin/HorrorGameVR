@@ -71,8 +71,9 @@ public class PlayerMove : MonoBehaviour
             _isChangeAudioClip = true;
         }
 
-        _moveVector = Vector3.right * _input.InputX + Vector3.forward * _input.InputY;
+        _moveVector = transform.right * _input.InputX + transform.forward * _input.InputY;
         _moveVector = Camera.main.transform.TransformDirection(_moveVector);
+        
         _moveVector.y = 0f;
         _moveVector.Normalize();
 
@@ -88,7 +89,7 @@ public class PlayerMove : MonoBehaviour
 
         if(_isRunning)
         {
-            _speed = 5.5f;
+            _speed = 10f;
         }
         else
         {

@@ -15,7 +15,10 @@ public class IncineratorEvent : MonoBehaviour, IInteraction
 
     private bool _isBrainIn;
 
-
+    private void Awake()
+    {
+        _audio = GetComponent<AudioSource>();
+    }
     private void Update()
     {
 
