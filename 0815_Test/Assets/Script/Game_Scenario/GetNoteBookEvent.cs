@@ -29,7 +29,7 @@ public class GetNoteBookEvent : MonoBehaviour
     private void AllLightOff()
     {
         Lights.SetActive(false);
-        UIManager.Instance.DrawAndEraseDialogueTextForSeconds("어..어라? 전기가 나간건가? 집에 어서 가야겠어...", 4f);
+        UIManager.Instance.DrawAndEraseDialogueTextForSeconds("어..어라? 전기가 나간건가? 집에 어서 가야겠어... F를 누르면 휴대폰 손전등을 켤 수 있었지..", 6f);
     }
 
     

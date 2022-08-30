@@ -23,7 +23,7 @@ public class ScreenPuzzleKeyBoardInteraction : MonoBehaviour, IInteraction
     {
         if(Beam._isBeamOn)
         {
-            _activeText = "Q : Back  E : Next";
+            _activeText = $"현재화면 : {_currentScreenIndex + 1} Q : Back  E : Next";
         }
         else
         {
