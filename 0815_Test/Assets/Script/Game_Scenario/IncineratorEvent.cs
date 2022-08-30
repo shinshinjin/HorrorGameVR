@@ -6,8 +6,6 @@ using UnityEngine.Events;
 public class IncineratorEvent : MonoBehaviour, IInteraction
 {
     public UnityEvent BurningBrain;
-    public AudioClip BrainIn;
-    public AudioClip Fire;
     public GameObject StorageKey;
     public GameObject _HerCrying;
 
@@ -47,11 +45,15 @@ public class IncineratorEvent : MonoBehaviour, IInteraction
     {
         if (ItemManager.Instance.CurrentItemName == "±◊≥‡¿« ≥˙")
         {
+            ItemManager.Instance.UsedItem();
+            _audio.Play();
             _isBrainIn = true;
         }
 
         if (ItemManager.Instance.CurrentItemName == "∂Û¿Ã≈Õ" && _isBrainIn)
         {
+            ItemManager.Instance.UsedItem();
+            _audio.Play();
             StorageKey.SetActive(true);
             BurningBrain.Invoke();
             UIManager.Instance.GuideText.text = "∫¥ø¯ ≈ª√‚«œ±‚";

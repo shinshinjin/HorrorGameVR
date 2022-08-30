@@ -13,6 +13,8 @@ public class SuprizeAI_01 : MonoBehaviour
     [SerializeField]
     GameObject _audio_Object;
 
+    //private float elapsedTime = 
+
     private void OnTriggerStay(Collider other)
     {
         if (other.tag == "Player")
@@ -26,9 +28,11 @@ public class SuprizeAI_01 : MonoBehaviour
 
     private void OnTriggerExit()
     {
-        Destroy(Doctor.gameObject, 2f);
-        Destroy(Light.gameObject, 2f);
+        Destroy(Doctor.gameObject);
+        Destroy(Light.gameObject);
         gameObject.SetActive(false);
         _audio_Object.SetActive(false);
     }
+
+    
 }

@@ -5,13 +5,14 @@ using UnityEngine;
 public class BeamProjectInteraction : MonoBehaviour, IInteraction
 {
     public string _activeText;
+    public bool _isBeamOn;
 
     private Light _light;
-
-    public bool _isBeamOn;
+    private AudioSource _audio;
 
     private void Awake()
     {
+        _audio = GetComponent<AudioSource>();
         _activeText = "빔 프로젝트 켜기";
         _light = GetComponentInChildren<Light>();
         _light.gameObject.SetActive(false);
@@ -35,6 +36,7 @@ public class BeamProjectInteraction : MonoBehaviour, IInteraction
     {
         if(_isBeamOn == false && ItemManager.Instance.CurrentItemName == "빔 프로젝트 리모컨")
         {
+            _audio.Play();
             _isBeamOn = true;
             _light.gameObject.SetActive(true);
         }
