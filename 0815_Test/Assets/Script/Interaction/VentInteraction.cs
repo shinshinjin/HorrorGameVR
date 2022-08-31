@@ -6,6 +6,7 @@ public class VentInteraction : MonoBehaviour, IInteraction
 {
     public Transform Player;
     public Transform Target;
+    public GameObject Hospital_Map;
     public string _activeText;
 
     [SerializeField]
@@ -38,6 +39,7 @@ public class VentInteraction : MonoBehaviour, IInteraction
     {
         if (_isOpen)
         {
+            Hospital_Map.SetActive(true);
             Debug.Log("병원 출발");
             Player.position = Target.position;
             UIManager.Instance.GuideText.text = "병원에서 단서 찾기";

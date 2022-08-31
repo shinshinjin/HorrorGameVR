@@ -42,14 +42,17 @@ public class FollowDoctorEvent : MonoBehaviour
     public void PointChanger(int currentPointIndex)
     {
         Points[currentPointIndex].gameObject.SetActive(false);
+        
         if(currentPointIndex >= 3)
         {
             currentPointIndex = 0;
         }
+
         else
         {
             currentPointIndex++;
         }
+
         Points[currentPointIndex].gameObject.SetActive(true);
         _pointIndex = currentPointIndex;
         Target = Points[_pointIndex].transform;
