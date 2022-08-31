@@ -29,9 +29,11 @@ public class FollowDoctorEvent : MonoBehaviour
     {
         Sight.SetActive(true);
         Points[0].gameObject.SetActive(true);
+        Target = Points[0].transform;
+        Sight.GetComponent<FollowDoctorSight>().IsFind = false;
         Doctor.SetActive(true);
     }
-    
+
     public void InitDoctor()
     {
         Doctor.transform.position = DoctorSpawnPosition.position;
@@ -42,7 +44,7 @@ public class FollowDoctorEvent : MonoBehaviour
     public void PointChanger(int currentPointIndex)
     {
         Points[currentPointIndex].gameObject.SetActive(false);
-        if(currentPointIndex >= 3)
+        if (currentPointIndex >= 3)
         {
             currentPointIndex = 0;
         }
