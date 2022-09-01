@@ -25,26 +25,29 @@ public class PlayerRay : MonoBehaviour
     private IncineratorEvent _incinerator;
     private RaycastHit _hit;
     private float _distance = 6f;
+    private float _uiDistance = 20f;
 
     
     private void Update()
     {
         UIManager.Instance.EraseInteractText();
-        if (Physics.Raycast(transform.position, transform.forward, out _hit, _distance))
+        if (Physics.Raycast(transform.position, transform.forward, out _hit, _uiDistance))
         {
             if (_hit.transform.CompareTag("UI"))
             {
-                if(OVRInput.GetDown(OVRInput.Button.Two))
+                if (OVRInput.GetDown(OVRInput.Button.Two))
                 {
                     Button button = _hit.transform.GetComponent<Button>();
 
-                    if(button != null)
+                    if (button != null)
                     {
                         button.onClick.Invoke();
                     }
                 }
             }
-
+        }
+        if(Physics.Raycast(transform.position, transform.forward, out _hit, _distance))
+        { 
             if (_hit.transform.CompareTag("Drawer"))
             {
                 DrawerInteract();

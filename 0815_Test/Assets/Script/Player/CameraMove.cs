@@ -38,14 +38,30 @@ public class CameraMove : MonoBehaviour
             transform.position = _player.transform.position + new Vector3(0, 3f, 0);
         }
 
-        float yRotateSize = Input.GetAxis("Mouse X") * _speed;
+        if(OVRInput.Get(OVRInput.Touch.SecondaryThumbstick))
+        {
+            Vector2 Joystick = OVRInput.Get(OVRInput.Axis2D.SecondaryThumbstick);
 
-        float yRotate = transform.eulerAngles.y + yRotateSize;
+            if(Joystick.x < 0)
+            {
+                Debug.Log("완쪽");
+                transform.Rotate(-90f,0,0);
+            }
+            else if(Joystick.x > 0)
+            {
+                Debug.Log("오른쪽");
+                transform.Rotate(90f, 0, 0);
+            }
+        }
 
-        float xRotateSize = -Input.GetAxis("Mouse Y") * _speed;
+        //float yRotateSize = Input.GetAxis("Mouse X") * _speed;
 
-        xRotate = Mathf.Clamp(xRotate + xRotateSize, -90, 90);
+        //float yRotate = transform.eulerAngles.y + yRotateSize;
 
-        transform.eulerAngles = new Vector3(xRotate, yRotate, 0);   
+        //float xRotateSize = -Input.GetAxis("Mouse Y") * _speed;
+
+        //xRotate = Mathf.Clamp(xRotate + xRotateSize, -90, 90);
+
+        //transform.eulerAngles = new Vector3(xRotate, yRotate, 0);   
     }
 }
