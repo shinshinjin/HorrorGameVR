@@ -13,6 +13,8 @@ public class PlayerDead : MonoBehaviour
     public FollowDoctorEvent DoctorEvent;
     public FollowDoctorMove SetDoctorSpeed;
 
+    public AudioClip DeadSound;
+
     private bool _isDead;
     private float _spwanCooltime = 1.5f;
     private float _eleaspedTime = 0f;
@@ -44,6 +46,7 @@ public class PlayerDead : MonoBehaviour
     public void Dead()
     {
         Debug.Log("Dead½ÇÇàµÊ");
+        AudioSource.PlayClipAtPoint(DeadSound, transform.position);
         _isDead = true;
     }
 

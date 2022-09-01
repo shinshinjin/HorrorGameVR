@@ -28,8 +28,8 @@ public class FollowDoctorEvent : MonoBehaviour
     public void SpawnDoctor()
     {
         Sight.SetActive(true);
-        Points[0].gameObject.SetActive(true);
-        Target = Points[0].transform;
+        Points[3].gameObject.SetActive(true);
+        Target = Points[3].transform;
         Sight.GetComponent<FollowDoctorSight>().IsFind = false;
         Doctor.SetActive(true);
     }
