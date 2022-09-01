@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerRay : MonoBehaviour
 {
@@ -31,7 +32,20 @@ public class PlayerRay : MonoBehaviour
         UIManager.Instance.EraseInteractText();
         if (Physics.Raycast(transform.position, transform.forward, out _hit, _distance))
         {
-            if(_hit.transform.CompareTag("Drawer"))
+            if (_hit.transform.CompareTag("UI"))
+            {
+                if(OVRInput.GetDown(OVRInput.Button.Two))
+                {
+                    Button button = _hit.transform.GetComponent<Button>();
+
+                    if(button != null)
+                    {
+                        button.onClick.Invoke();
+                    }
+                }
+            }
+
+            if (_hit.transform.CompareTag("Drawer"))
             {
                 DrawerInteract();
             }

@@ -28,6 +28,7 @@ TagManager:
   - Vent
   - Incinerator
   - FollowDoctor
+  - UI
   layers:
   - Default
   - TransparentFX
