@@ -182,7 +182,7 @@ public class UIManager : MonoBehaviour
 
             yield return new WaitForSeconds(0.01f);
         }
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(2f);
         while (BackGroundImage.color.a >= 0f)
         {
             FadeOutColor.a -= fadeInTime;
