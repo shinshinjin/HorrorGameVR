@@ -5,6 +5,7 @@ using UnityEngine;
 public class GYMainDoorEvent : MonoBehaviour
 {
     public GameObject Class10Door;
+    public GameObject _JumpSquare;
 
     private SphereCollider _collider;
     private DoorInteraction _doorInteraction;
@@ -29,6 +30,7 @@ public class GYMainDoorEvent : MonoBehaviour
             _collider.enabled = false;
             UIManager.Instance.DrawAndEraseDialogueTextForSeconds("어.. 어라? 왜 문이 멋대로..", 2f);
             UIManager.Instance.GuideText.text = "집으로 갈 방법을 찾자";
+            _JumpSquare.SetActive(true);
             Class10Door.tag = "Door";
             Camera.main.cullingMask = -1;
         }
