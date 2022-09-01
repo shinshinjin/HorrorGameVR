@@ -16,7 +16,7 @@ public class CameraMove : MonoBehaviour
     {
         _cameraPosition = GetComponentInParent<CapsuleCollider>();
         _move = GetComponentInParent<PlayerMove>();
-        _input = GetComponent<UserInput>();
+        _input = GetComponentInParent<UserInput>();
     }
 
     private void Update()
@@ -38,11 +38,11 @@ public class CameraMove : MonoBehaviour
             transform.position = _player.transform.position + new Vector3(0, 3f, 0);
         }
 
-        float yRotateSize = Input.GetAxis("Mouse X") * _speed;
+        float yRotateSize = _input.MouseInputX * _speed;
 
         float yRotate = transform.eulerAngles.y + yRotateSize;
 
-        float xRotateSize = -Input.GetAxis("Mouse Y") * _speed;
+        float xRotateSize = -_input.MouseInputY * _speed;
 
         xRotate = Mathf.Clamp(xRotate + xRotateSize, -90, 90);
 

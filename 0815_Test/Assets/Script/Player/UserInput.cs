@@ -27,36 +27,51 @@ public class UserInput : MonoBehaviour
     }
     private void FixedUpdate()
     {
+        if (GameManager.Instance.DoNotInput == false)
+        {
+            InputX = Input.GetAxisRaw("Horizontal");
+            InputY = Input.GetAxisRaw("Vertical");
 
-        InputX = Input.GetAxisRaw("Horizontal");
-        InputY = Input.GetAxisRaw("Vertical");
+            MouseInputX = Input.GetAxis("Mouse X");
+            MouseInputY = Input.GetAxis("Mouse Y");
+        }
+        else
+        {
+            InputX = 0;
+            InputY = 0;
 
-        MouseInputX = Input.GetAxis("Mouse X");
-        MouseInputY = Input.GetAxis("Mouse Y");
+            MouseInputX = 0;
+            MouseInputY = 0;
+        }
+        
     }
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.F) && ItemManager.Instance.IsHavePhone)
+        if(GameManager.Instance.DoNotInput == false)
         {
-            IsLightOn = !IsLightOn;
-            _handLightSound.PlayOneShot(HandLightSound);
-        }
+            if (Input.GetKeyDown(KeyCode.F) && ItemManager.Instance.IsHavePhone)
+            {
+                IsLightOn = !IsLightOn;
+                _handLightSound.PlayOneShot(HandLightSound);
+            }
 
-        if (Input.GetKeyDown(KeyCode.Tab))
-        {
-            IsInventoryOn = !IsInventoryOn;
-            InventoryOn.Invoke();
-            //if (IsInventoryOn)
-            //    StartCoroutine(UIManager.Instance.DrawDialogueText("인벤토리가 켜졌습니다"));
-            //else
-            //    UIManager.Instance.UnVisibleDialogueText();
-        }
+            if (Input.GetKeyDown(KeyCode.Tab))
+            {
+                IsInventoryOn = !IsInventoryOn;
+                InventoryOn.Invoke();
+                //if (IsInventoryOn)
+                //    StartCoroutine(UIManager.Instance.DrawDialogueText("인벤토리가 켜졌습니다"));
+                //else
+                //    UIManager.Instance.UnVisibleDialogueText();
+            }
 
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            IsPauseOn = !IsPauseOn;
-            PauseOn.Invoke();
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                IsPauseOn = !IsPauseOn;
+                PauseOn.Invoke();
+            }
         }
+        
     }
 }

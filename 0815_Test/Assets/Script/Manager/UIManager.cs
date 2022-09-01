@@ -16,6 +16,9 @@ public class UIManager : MonoBehaviour
     public Text GuideText;
     public Text SelectedItemTextWithInventory;
 
+    public Image BackGroundImage;
+    public GameObject BackGroundUI;
+
     private float _drawOneWordTime = 0.02f;
     
     public static UIManager Instance
@@ -111,5 +114,82 @@ public class UIManager : MonoBehaviour
             Dialogue.text += dialogue[i];
             yield return new WaitForSeconds(_drawOneWordTime);
         }
+    }
+    /// <summary>
+    /// 페이드 인 & 아웃에 쓸 배경 이미지 색 세팅 함수
+    /// </summary>
+    /// <param name="color"> 배경의 색 </param>
+    public void SetBackGroundColor(Color color)
+    {
+        BackGroundImage.color = color;
+    }
+    /// <summary>
+    /// 화면 페이드 인 코루틴
+    /// </summary>
+    /// <param name="fadeInTime">0.1초마다 빼 줄 알파 값, 0 ~ 1 사이 작을수록 더 천천히 투명해짐</param>
+    /// <returns></returns>
+    public IEnumerator FadeInBackGround(float fadeInTime)
+    {
+        Color FadeInColor = BackGroundImage.color;
+        FadeInColor.a = 1f;
+        BackGroundImage.color = FadeInColor;
+        BackGroundUI.SetActive(true);
+        while (FadeInColor.a >= 0f)
+        {
+            FadeInColor.a -= fadeInTime;
+            BackGroundImage.color = FadeInColor;
+
+            yield return new WaitForSeconds(0.01f);
+        }
+        BackGroundUI.SetActive(false);
+    }
+    /// <summary>
+    /// 화면 페이드 아웃 코루틴
+    /// </summary>
+    /// <param name="fadeOutTime">0.1초마다 더해 줄 알파 값, 0 ~ 1 사이 작을수록 더 천천히 불투명해짐</param>
+    /// <returns></returns>
+    public IEnumerator FadeOutBackGround(float fadeOutTime)
+    {
+        Color FadeOutColor = BackGroundImage.color;
+        BackGroundUI.SetActive(true);
+        while (FadeOutColor.a <= 1f)
+        {
+            FadeOutColor.a += fadeOutTime;
+            BackGroundImage.color += FadeOutColor;
+
+            yield return new WaitForSeconds(0.01f);
+        }
+        BackGroundUI.SetActive(false);
+    }
+
+    /// <summary>
+    /// 페이드 인, 아웃을 동시에 수행하는 코루틴
+    /// </summary>
+    /// <param name="fadeInTime">0.1초마다 빼 줄 알파 값, 0 ~ 1 사이 작을수록 더 천천히 투명해짐</param>
+    /// <param name="fadeOutTime">0.1초마다 더해 줄 알파 값, 0 ~ 1 사이 작을수록 더 천천히 불투명해짐</param>
+    /// <returns></returns>
+    public IEnumerator FadeOutAndIn(float fadeInTime, float fadeOutTime)
+    {
+        Color FadeOutColor;
+        FadeOutColor = BackGroundImage.color;
+        FadeOutColor.a = 0f;
+        BackGroundUI.SetActive(true);
+        while (BackGroundImage.color.a <= 1f)
+        {
+
+            FadeOutColor.a += fadeOutTime;
+            BackGroundImage.color = FadeOutColor;
+
+            yield return new WaitForSeconds(0.01f);
+        }
+        yield return new WaitForSeconds(2f);
+        while (BackGroundImage.color.a >= 0f)
+        {
+            FadeOutColor.a -= fadeInTime;
+            BackGroundImage.color = FadeOutColor;
+
+            yield return new WaitForSeconds(0.01f);
+        }
+        BackGroundUI.SetActive(false);
     }
 }

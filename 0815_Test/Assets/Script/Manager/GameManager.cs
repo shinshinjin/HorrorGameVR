@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
     public bool IsTutorialOver;
 
     public bool IsPaused;
+    public bool DoNotInput;
 
     public bool IsMoveTutorialOver;
 
@@ -25,6 +26,7 @@ public class GameManager : MonoBehaviour
     public bool IsUseItemTutorialOver;
 
     public bool IsPLClassPuzzleOver;
+    public bool IsPLClassHiddenPuzzleOver;
     public bool IsInFan;
 
     public static GameManager Instance

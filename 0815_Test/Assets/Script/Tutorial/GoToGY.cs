@@ -11,10 +11,11 @@ public class GoToGY : MonoBehaviour
     {
         if (other.CompareTag("LockDoor"))
         {
+            StartCoroutine(UIManager.Instance.FadeInBackGround(0.1f));
             Debug.Log("학원 출발");
             Player.position = Target.position;
             UIManager.Instance.EraseInfoText();
-            Tutorial_Map.SetActive(false);
+            //Tutorial_Map.SetActive(false);
         }
     }
 }
