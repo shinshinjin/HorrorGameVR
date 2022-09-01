@@ -20,7 +20,7 @@ public class Tutorial : MonoBehaviour
         
         if(GameManager.Instance.IsMoveTutorialOver == false)
         {
-            //TutorialTrigger.GetComponent<PlayerRay>().enabled = false;
+            TutorialTrigger.GetComponent<PlayerRay>().enabled = false;
             StartCoroutine(MoveTutorial());
             GameManager.Instance.IsMoveTutorialOver = true;
         }
