@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
 
     public bool IsPaused;
     public bool DoNotInput;
+    public bool IsCofferOn;
 
     public bool IsMoveTutorialOver;
 

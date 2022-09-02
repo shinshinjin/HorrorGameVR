@@ -17,7 +17,7 @@ public class PauseButton : MonoBehaviour
     public void ReturnGame()
     {
         returnbutton.gameObject.SetActive(false);
-        if(_input.IsInventoryOn == false)
+        if(_input.IsInventoryOn == false && GameManager.Instance.IsCofferOn == false)
         {
             GameManager.Instance.IsMouseLocked = true;
             GameManager.Instance.IsPaused = false;

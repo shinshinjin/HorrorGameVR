@@ -15,8 +15,8 @@ public class UserInput : MonoBehaviour
     [SerializeField]
     public bool IsLightOn;
     public bool IsInventoryOn;
-
     public bool IsPauseOn;
+    
 
     private AudioSource _handLightSound;
     public AudioClip HandLightSound;

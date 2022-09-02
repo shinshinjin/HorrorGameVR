@@ -9,7 +9,7 @@ public class PRNumberCofferSystem : MonoBehaviour
     public NumberCofferInteraction Coffer;
 
     public GameObject[] Coffers;
-
+    public UserInput _input;
     public AudioSource Audio;
     public Text InputNumber;
 
@@ -18,13 +18,18 @@ public class PRNumberCofferSystem : MonoBehaviour
     public void CofferOff()
     {
         UIManager.Instance.EraseDialogueText();
-        GameManager.Instance.IsMouseLocked = true;
-        GameManager.Instance.IsPaused = false;
+        Coffer.IsActive = false;
+        GameManager.Instance.IsCofferOn = false;
+        if (_input.IsPauseOn == false && _input.IsInventoryOn == false && GameManager.Instance.IsCofferOn == false)
+        {
+            GameManager.Instance.IsMouseLocked = true;
+            GameManager.Instance.IsPaused = false;
+        }
         CofferImage.SetActive(false);
     }
     public void CofferOn()
     {
-        if (Coffer._isActive)
+        if (Coffer.IsActive)
         {
             GameManager.Instance.IsMouseLocked = false;
             GameManager.Instance.IsPaused = true;
@@ -49,7 +54,7 @@ public class PRNumberCofferSystem : MonoBehaviour
             Coffer.GetComponent<BoxCollider>().enabled = false;
             Coffers[0].SetActive(true);
             Coffers[1].SetActive(false);
-            Coffer._isActive = false;
+            Coffer.IsActive = false;
             CofferOff();
         }
         else
