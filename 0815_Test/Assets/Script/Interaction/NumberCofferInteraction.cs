@@ -10,7 +10,7 @@ public class NumberCofferInteraction : MonoBehaviour
 
     public string _activeText;
 
-    public bool _isActive;
+    public bool IsActive;
 
     private Image _image;
     private void Awake()
@@ -20,15 +20,17 @@ public class NumberCofferInteraction : MonoBehaviour
     }
     public void Interaction()
     {
-        if(_isActive == false)
+        if(IsActive == false)
         {
             StartCoroutine(UIManager.Instance.DrawDialogueText("중간 둥근 버튼을 누르면 나갑니다"));
-            _isActive = true;
+            IsActive = true;
+            GameManager.Instance.IsCofferOn = true;
         }
-        else
-        {
-            _isActive = false;
-        }
+        //else
+        //{
+        //    IsActive = false;
+        //    GameManager.Instance.IsCofferOn = false;
+        //}
         CofferOn.Invoke();
     }
 }
