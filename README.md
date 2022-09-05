@@ -1,7 +1,9 @@
-# HorrorGameVR
+# HorrorGame_"The Kyungil"
 
-## 링크
+## 게임영상 설명링크
 https://youtu.be/6lko-AZmC7E
+
+# Making_
 
 ## 배제할 요소 
 !!! 점프 스퀘어 ( 갑툭튀 ) !!!!
